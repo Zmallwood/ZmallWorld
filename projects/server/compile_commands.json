@@ -16,6 +16,11 @@
 },
 {
   "directory": "/home/andreas/code/hobby/ZmallWorld/repo/projects/server",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-I", "/home/andreas/.xmake/packages/n/nlohmann_json/v3.11.3/b4e38c4916bd42c39063f144e29030df/include", "-I", "/home/andreas/.xmake/packages/b/boost/1.86.0/4a6030b84a3047e1bd19ef7b130b2be4/include", "-I", "src/", "-o", "build/.objs/ZmallWorldServer/linux/x86_64/release/src/core/net/listener.cpp.o", "src/core/net/listener.cpp"],
+  "file": "src/core/net/listener.cpp"
+},
+{
+  "directory": "/home/andreas/code/hobby/ZmallWorld/repo/projects/server",
   "arguments": ["/usr/bin/gcc", "-c", "-m64", "-I", "/home/andreas/.xmake/packages/n/nlohmann_json/v3.11.3/b4e38c4916bd42c39063f144e29030df/include", "-I", "/home/andreas/.xmake/packages/b/boost/1.86.0/4a6030b84a3047e1bd19ef7b130b2be4/include", "-I", "src/", "-o", "build/.objs/ZmallWorldServer/linux/x86_64/release/src/core/net/net_server.cpp.o", "src/core/net/net_server.cpp"],
   "file": "src/core/net/net_server.cpp"
 },
