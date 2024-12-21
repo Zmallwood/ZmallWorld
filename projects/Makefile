@@ -17,3 +17,7 @@ run:
 	screen -d -m xmake run ZmallWorldServer 0.0.0.0 8080 1;
 	xdg-open ./client/src/index.html;
 	screen -r
+
+run_zmallsim:
+	cd ./server/apps/ZmallSim;\
+	rye run;
