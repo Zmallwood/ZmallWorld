@@ -3,9 +3,9 @@
 #include "session.hpp"
 
 namespace forr {
-    namespace beast = boost::beast;         // from <boost/beast.hpp>
-    namespace net = boost::asio;            // from <boost/asio.hpp>
-    using tcp = boost::asio::ip::tcp;       // from <boost/asio/ip/tcp.hpp>
+    namespace beast = boost::beast;
+    namespace net = boost::asio;
+    using tcp = boost::asio::ip::tcp;
 
     listener::listener(net::io_context &ioc, tcp::endpoint endpoint) : ioc_(ioc), acceptor_(ioc) {
         beast::error_code ec;
@@ -58,7 +58,6 @@ namespace forr {
             std::make_shared<session>(std::move(socket))->run();
         }
 
-        // Accept another connection
         do_accept();
     }
 }

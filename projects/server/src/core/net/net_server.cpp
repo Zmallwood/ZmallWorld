@@ -1,16 +1,10 @@
-#include "pch/pch.hpp"
 #include "net_server.hpp"
 #include "listener.hpp"
+#include "pch/pch.hpp"
 
 namespace forr {
-    namespace beast = boost::beast;         // from <boost/beast.hpp>
-    namespace net = boost::asio;            // from <boost/asio.hpp>
-    using tcp = boost::asio::ip::tcp;       // from <boost/asio/ip/tcp.hpp>
-
-
-
-
-    //------------------------------------------------------------------------------
+    namespace net = boost::asio;
+    using tcp = boost::asio::ip::tcp;
 
     void net_server::run(boost::asio::ip::address address, unsigned short port, int threads) {
         // The io_context is required for all I/O

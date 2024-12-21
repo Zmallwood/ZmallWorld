@@ -2,10 +2,10 @@
 #include "pch/pch.hpp"
 
 namespace forr {
-    namespace beast = boost::beast;         // from <boost/beast.hpp>
-    namespace http = beast::http;           // from <boost/beast/http.hpp>
-    namespace websocket = beast::websocket; // from <boost/beast/websocket.hpp>
-    using tcp = boost::asio::ip::tcp;       // from <boost/asio/ip/tcp.hpp>
+    namespace beast = boost::beast;
+    namespace http = beast::http;
+    namespace websocket = beast::websocket;
+    using tcp = boost::asio::ip::tcp;
 
     // Take ownership of the socket
     session::session(tcp::socket &&socket) : ws_(std::move(socket)) {
@@ -29,7 +29,6 @@ namespace forr {
         if (ec)
             return fail(ec, "accept");
 
-        // Read a message
         do_read();
     }
 
@@ -64,7 +63,6 @@ namespace forr {
         // Clear the buffer
         buffer_.consume(buffer_.size());
 
-        // Do another read
         do_read();
     }
 }
