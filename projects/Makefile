@@ -20,4 +20,4 @@ run:
 
 run_zmallsim:
 	cd ./server/apps/ZmallSim;\
-	rye run;
+	rye run zmallsim;

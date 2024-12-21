@@ -8,7 +8,7 @@ var init = function() {
       ctx.drawImage(image, 0, 0);
     }
     image.src = "./resources/images/ground_grass.png"
-     var ws = new WebSocket('ws://localhost:8080/', 'echo-protocol');
+     var ws = new WebSocket('ws://localhost:8080/');
       ws.onopen = function () {
           console.log('socket connection opened properly');
           ws.send("Hello World"); // send a message
