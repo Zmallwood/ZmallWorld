@@ -1,4 +1,4 @@
-#include "session.hpp"
+#include "net_session.hpp"
 #include "pch/pch.hpp"
 
 namespace forr {
@@ -8,11 +8,11 @@ namespace forr {
     using tcp = boost::asio::ip::tcp;
 
     // Take ownership of the socket
-    session::session(tcp::socket &&socket) : ws_(std::move(socket)) {
+    net_session::net_session(tcp::socket &&socket) : ws_(std::move(socket)) {
     }
 
     // Start the asynchronous operation
-    void session::run() {
+    void net_session::run() {
         // Set suggested timeout settings for the websocket
         ws_.set_option(websocket::stream_base::timeout::suggested(beast::role_type::server));
 
@@ -22,22 +22,22 @@ namespace forr {
         }));
 
         // Accept the websocket handshake
-        ws_.async_accept(beast::bind_front_handler(&session::on_accept, shared_from_this()));
+        ws_.async_accept(beast::bind_front_handler(&net_session::on_accept, shared_from_this()));
     }
 
-    void session::on_accept(beast::error_code ec) {
+    void net_session::on_accept(beast::error_code ec) {
         if (ec)
             return fail(ec, "accept");
 
         do_read();
     }
 
-    void session::do_read() {
+    void net_session::do_read() {
         // Read a message into our buffer
-        ws_.async_read(buffer_, beast::bind_front_handler(&session::on_read, shared_from_this()));
+        ws_.async_read(buffer_, beast::bind_front_handler(&net_session::on_read, shared_from_this()));
     }
 
-    void session::on_read(beast::error_code ec, std::size_t bytes_transferred) {
+    void net_session::on_read(beast::error_code ec, std::size_t bytes_transferred) {
         boost::ignore_unused(bytes_transferred);
 
         // This indicates that the session was closed
@@ -51,10 +51,10 @@ namespace forr {
         std::cout << "Messages recieved: " << s << std::endl;
         // Echo the message
         ws_.text(ws_.got_text());
-        ws_.async_write(buffer_.data(), beast::bind_front_handler(&session::on_write, shared_from_this()));
+        ws_.async_write(buffer_.data(), beast::bind_front_handler(&net_session::on_write, shared_from_this()));
     }
 
-    void session::on_write(beast::error_code ec, std::size_t bytes_transferred) {
+    void net_session::on_write(beast::error_code ec, std::size_t bytes_transferred) {
         boost::ignore_unused(bytes_transferred);
 
         if (ec)

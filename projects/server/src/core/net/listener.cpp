@@ -1,6 +1,6 @@
 #include "listener.hpp"
 #include "pch/pch.hpp"
-#include "session.hpp"
+#include "net_session.hpp"
 
 namespace forr {
     namespace beast = boost::beast;
@@ -55,7 +55,7 @@ namespace forr {
             fail(ec, "accept");
         } else {
             // Create the session and run it
-            std::make_shared<session>(std::move(socket))->run();
+            std::make_shared<net_session>(std::move(socket))->run();
         }
 
         do_accept();
