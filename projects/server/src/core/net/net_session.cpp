@@ -3,8 +3,8 @@
 #include "net_session.hpp"
 #include "boost/beast/core/flat_buffer.hpp"
 #include "boost/beast/core/multi_buffer.hpp"
-#include "pch/pch.hpp"
 #include "core/session/session_loop.hpp"
+#include "pch/pch.hpp"
 
 namespace forr {
     namespace beast = boost::beast;
@@ -36,18 +36,14 @@ namespace forr {
 
         session_loop_ = std::make_shared<session_loop>(shared_from_this());
         do_read();
-        //do_read();
     }
 
     void net_session::do_read() {
-        // Read a message into our buffer
         ws_.async_read(read_buffer_, beast::bind_front_handler(&net_session::on_read, shared_from_this()));
-
-        
     }
-    
+
     std::string net_session::get_last_message() {
-      return last_message_;
+        return last_message_;
     }
 
     void net_session::on_read(beast::error_code ec, std::size_t bytes_transferred) {
@@ -60,31 +56,27 @@ namespace forr {
         if (ec)
             fail(ec, "read");
 
-        std::string s(boost::asio::buffer_cast<const char *>(read_buffer_.data()), read_buffer_.size());
-        std::cout << "Messages recieved: " << s << std::endl;
-        last_message_ = s;
+        last_message_ = std::string(boost::asio::buffer_cast<const char *>(read_buffer_.data()), read_buffer_.size());
 
         read_buffer_.consume(read_buffer_.size());
         session_loop_->update();
         session_loop_->render();
-        //do_write("tjoho");
     }
 
     void net_session::add_message(std::string_view message) {
-      outgoing_messages_.push(message.data());
+        outgoing_messages_.push(message.data());
     }
 
     void net_session::do_write() {
+        if (!is_writing_ && !outgoing_messages_.empty()) {
+            is_writing_ = true;
+            boost::beast::flat_buffer b;
+            boost::beast::ostream(b) << outgoing_messages_.front();
 
-      if (!is_writing_ && !outgoing_messages_.empty()) {
-        is_writing_ = true;
-          boost::beast::flat_buffer b;
-          boost::beast::ostream(b) << outgoing_messages_.front();
-
-          // Echo the message
-          ws_.text(ws_.got_text());
-          ws_.async_write(b.data(), beast::bind_front_handler(&net_session::on_write, shared_from_this()));
-      }
+            // Echo the message
+            ws_.text(ws_.got_text());
+            ws_.async_write(b.data(), beast::bind_front_handler(&net_session::on_write, shared_from_this()));
+        }
     }
 
     void net_session::on_write(beast::error_code ec, std::size_t bytes_transferred) {
@@ -98,9 +90,6 @@ namespace forr {
         // Clear the buffer
         write_buffer_.consume(write_buffer_.size());
 
-
         do_write();
-
-        //do_read();
     }
 }
