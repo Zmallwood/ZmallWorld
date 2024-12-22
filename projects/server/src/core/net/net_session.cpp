@@ -39,7 +39,11 @@ namespace forr {
 
     void net_session::do_read() {
         // Read a message into our buffer
-        ws_.async_read(buffer_, beast::bind_front_handler(&net_session::on_read, shared_from_this()));
+        ws_.async_read(read_buffer_, beast::bind_front_handler(&net_session::on_read, shared_from_this()));
+    }
+    
+    std::string net_session::get_last_message() {
+      return last_message_;
     }
 
     void net_session::on_read(beast::error_code ec, std::size_t bytes_transferred) {
@@ -52,8 +56,11 @@ namespace forr {
         if (ec)
             fail(ec, "read");
 
-        std::string s(boost::asio::buffer_cast<const char *>(buffer_.data()), buffer_.size());
+        std::string s(boost::asio::buffer_cast<const char *>(read_buffer_.data()), read_buffer_.size());
         std::cout << "Messages recieved: " << s << std::endl;
+        last_message_ = s;
+
+        read_buffer_.consume(read_buffer_.size());
         session_loop_->march();
         //do_write("tjoho");
     }
@@ -84,7 +91,7 @@ namespace forr {
             return fail(ec, "write");
 
         // Clear the buffer
-        buffer_.consume(buffer_.size());
+        write_buffer_.consume(write_buffer_.size());
 
         do_write();
 

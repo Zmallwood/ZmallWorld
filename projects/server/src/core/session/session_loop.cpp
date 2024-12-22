@@ -7,23 +7,25 @@ namespace forr {
 
     void session_loop::march() {
         switch (current_command_type_) {
-        case command_types::read:
+        case command_types::read: {
             net_session_->do_read();
+            auto message = net_session_->get_last_message();
+            std::cout << "READ: " << message << std::endl;
             current_command_type_ = command_types::write;
-            break;
-        case forr::command_types::write:
+        } break;
+        case forr::command_types::write: {
             net_session_->add_message("clear;0;150;255");
             net_session_->add_message("draw_text;10;60;ZmallWorld menu:");
             net_session_->add_message("draw_text;10;120;================");
             for (auto i = 0; i < menu_options_.size(); i++) {
-              std::string s = "draw_text;10;" + std::to_string(120+(i+1)*60) + ";* " + menu_options_[i];
-              net_session_->add_message(s);
+                std::string s = "draw_text;10;" + std::to_string(120 + (i + 1) * 60) + ";* " + menu_options_[i];
+                net_session_->add_message(s);
             }
-            //net_session_->do_write("render_finished");
+            // net_session_->do_write("render_finished");
             net_session_->do_write();
             current_command_type_ = command_types::read;
             march();
-            break;
+        } break;
         }
     }
 }

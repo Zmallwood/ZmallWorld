@@ -14,15 +14,18 @@ namespace forr {
         void on_accept(boost::beast::error_code ec);
         void add_message(std::string_view message);
         void do_read();
+        std::string get_last_message();
         void do_write();
         void on_read(boost::beast::error_code ec, std::size_t bytes_transferred);
         void on_write(boost::beast::error_code ec, std::size_t bytes_transferred);
 
       private:
         boost::beast::websocket::stream<boost::beast::tcp_stream> ws_;
-        boost::beast::flat_buffer buffer_;
+        boost::beast::flat_buffer read_buffer_;
+        boost::beast::flat_buffer write_buffer_;
         std::shared_ptr<session_loop> session_loop_;
         std::queue<std::string> outgoing_messages_;
         bool is_writing_ {false};
+        std::string last_message_;
     };
 }

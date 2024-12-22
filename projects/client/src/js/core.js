@@ -52,6 +52,6 @@ var init = function () {
 
   document.onkeydown = function (e) {
     e = e || window.event;
-    alert("Keypress: " + e.keyCode);
+    ws.send("key_down;" + e.keyCode);
   };
 };
