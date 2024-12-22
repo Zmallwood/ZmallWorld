@@ -25,4 +25,9 @@ namespace forr {
     void system_menu::select_down() {
       selected_menu_option_ = std::min(1, selected_menu_option_ + 1);
     }
+
+    void system_menu::apply_selection(std::shared_ptr<net_session> net_session) {
+      net_session->add_message("redirect;8081");
+      net_session->do_write();
+    }
 }

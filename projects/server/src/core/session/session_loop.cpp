@@ -21,6 +21,9 @@ namespace forr {
             case key_codes::k_arrow_down:
                 system_menu_->select_down();
                 break;
+            case key_codes::k_enter:
+                system_menu_->apply_selection(net_session_);
+                break;
             }
         }
     }

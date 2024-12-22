@@ -1,4 +1,5 @@
-var init = function () {
+var connect = function(port) {
+
   const canvas = document.getElementById("myCanvas");
   const ctx = canvas.getContext("2d");
   ctx.canvas.width = window.innerWidth;
@@ -13,7 +14,7 @@ var init = function () {
   };
   image.src = "./resources/images/ground_grass.png";
   ctx.font = "48px serif";
-  var ws = new WebSocket("ws://localhost:8080/");
+  var ws = new WebSocket("ws://localhost:" + port);
   ws.onopen = function () {
     console.log("socket connection opened properly");
     ws.send("Hello World"); // send a message
@@ -40,9 +41,10 @@ var init = function () {
         ctx.fillStyle = "rgb(0,0,0)";
         ctx.fillText(text, x, y);
         break;
-      case "render_finished":
-        ws.send("second message");
-        break;
+      case "redirect":
+        var port = parts[1]
+        connect(port)
+      break;
     }
   };
 
@@ -54,4 +56,9 @@ var init = function () {
     e = e || window.event;
     ws.send("key_down;" + e.keyCode);
   };
+}
+
+
+var init = function () {
+  connect(8080);
 };
