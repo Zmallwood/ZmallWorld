@@ -17,6 +17,7 @@ var init = function() {
 
       ws.onmessage = function (evt) {
           console.log("Message received = " + evt.data);
+          ws.send("second message");
       };
 
       ws.onclose = function () {

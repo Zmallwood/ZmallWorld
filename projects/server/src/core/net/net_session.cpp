@@ -1,5 +1,8 @@
 #include "net_session.hpp"
+#include "boost/beast/core/flat_buffer.hpp"
+#include "boost/beast/core/multi_buffer.hpp"
 #include "pch/pch.hpp"
+#include "core/session/session_loop.hpp"
 
 namespace forr {
     namespace beast = boost::beast;
@@ -29,7 +32,9 @@ namespace forr {
         if (ec)
             return fail(ec, "accept");
 
-        do_read();
+        session_loop_ = std::make_shared<session_loop>(shared_from_this());
+        session_loop_->march();
+        //do_read();
     }
 
     void net_session::do_read() {
@@ -49,9 +54,18 @@ namespace forr {
 
         std::string s(boost::asio::buffer_cast<const char *>(buffer_.data()), buffer_.size());
         std::cout << "Messages recieved: " << s << std::endl;
+        session_loop_->march();
+        //do_write("tjoho");
+    }
+
+    void net_session::do_write(std::string_view message) {
+
+        boost::beast::flat_buffer b;
+        boost::beast::ostream(b) << message;
+
         // Echo the message
         ws_.text(ws_.got_text());
-        ws_.async_write(buffer_.data(), beast::bind_front_handler(&net_session::on_write, shared_from_this()));
+        ws_.async_write(b.data(), beast::bind_front_handler(&net_session::on_write, shared_from_this()));
     }
 
     void net_session::on_write(beast::error_code ec, std::size_t bytes_transferred) {
@@ -63,6 +77,7 @@ namespace forr {
         // Clear the buffer
         buffer_.consume(buffer_.size());
 
-        do_read();
+        session_loop_->march();
+        //do_read();
     }
 }

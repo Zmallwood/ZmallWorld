@@ -2,6 +2,7 @@
 
 namespace forr {
 
+    class session_loop;
     // Echoes back all received WebSocket messages
     class net_session : public std::enable_shared_from_this<net_session> {
       public:
@@ -12,11 +13,13 @@ namespace forr {
         void run();
         void on_accept(boost::beast::error_code ec);
         void do_read();
+        void do_write(std::string_view text);
         void on_read(boost::beast::error_code ec, std::size_t bytes_transferred);
         void on_write(boost::beast::error_code ec, std::size_t bytes_transferred);
 
       private:
         boost::beast::websocket::stream<boost::beast::tcp_stream> ws_;
         boost::beast::flat_buffer buffer_;
+        std::shared_ptr<session_loop> session_loop_;
     };
 }
