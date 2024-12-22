@@ -13,5 +13,7 @@ namespace forr {
   private:
     command_types current_command_type_ = command_types::read;
     std::shared_ptr<net_session> net_session_;
+    std::vector<std::string> menu_options_ = {"DarkWorld", "ZmallSim"};
+    int active_menu_option_ {0};
   };
 }
