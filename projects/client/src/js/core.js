@@ -1,4 +1,5 @@
 var init = function() {
+
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
 ctx.canvas.width  = window.innerWidth;
@@ -51,4 +52,9 @@ ctx.canvas.width  = window.innerWidth;
           // websocket is closed.
           console.log("Connection closed...");
       };
+
+  document.onkeydown = function(e) {
+    e = e || window.event;
+    alert("Keypress: " + e.keyCode);
+  };
 }

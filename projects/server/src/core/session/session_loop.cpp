@@ -14,8 +14,9 @@ namespace forr {
         case forr::command_types::write:
             net_session_->add_message("clear;0;150;255");
             net_session_->add_message("draw_text;10;60;ZmallWorld menu:");
+            net_session_->add_message("draw_text;10;120;================");
             for (auto i = 0; i < menu_options_.size(); i++) {
-              std::string s = "draw_text;10;" + std::to_string(60+(i+1)*60) + ";" + menu_options_[i];
+              std::string s = "draw_text;10;" + std::to_string(120+(i+1)*60) + ";* " + menu_options_[i];
               net_session_->add_message(s);
             }
             //net_session_->do_write("render_finished");
