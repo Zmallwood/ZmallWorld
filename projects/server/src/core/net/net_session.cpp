@@ -58,26 +58,37 @@ namespace forr {
         //do_write("tjoho");
     }
 
-    void net_session::do_write(std::string_view message) {
+    void net_session::add_message(std::string_view message) {
+      outgoing_messages_.push(message.data());
+    }
 
-        boost::beast::flat_buffer b;
-        boost::beast::ostream(b) << message;
+    void net_session::do_write() {
 
-        // Echo the message
-        ws_.text(ws_.got_text());
-        ws_.async_write(b.data(), beast::bind_front_handler(&net_session::on_write, shared_from_this()));
+      if (!is_writing_ && !outgoing_messages_.empty()) {
+        is_writing_ = true;
+          boost::beast::flat_buffer b;
+          boost::beast::ostream(b) << outgoing_messages_.front();
+
+          // Echo the message
+          ws_.text(ws_.got_text());
+          ws_.async_write(b.data(), beast::bind_front_handler(&net_session::on_write, shared_from_this()));
+      }
     }
 
     void net_session::on_write(beast::error_code ec, std::size_t bytes_transferred) {
         boost::ignore_unused(bytes_transferred);
 
+        is_writing_ = false;
+        outgoing_messages_.pop();
         if (ec)
             return fail(ec, "write");
 
         // Clear the buffer
         buffer_.consume(buffer_.size());
 
-        session_loop_->march();
+        do_write();
+
+        //session_loop_->march();
         //do_read();
     }
 }

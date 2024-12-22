@@ -12,8 +12,9 @@ namespace forr {
         // Start the asynchronous operation
         void run();
         void on_accept(boost::beast::error_code ec);
+        void add_message(std::string_view message);
         void do_read();
-        void do_write(std::string_view text);
+        void do_write();
         void on_read(boost::beast::error_code ec, std::size_t bytes_transferred);
         void on_write(boost::beast::error_code ec, std::size_t bytes_transferred);
 
@@ -21,5 +22,7 @@ namespace forr {
         boost::beast::websocket::stream<boost::beast::tcp_stream> ws_;
         boost::beast::flat_buffer buffer_;
         std::shared_ptr<session_loop> session_loop_;
+        std::queue<std::string> outgoing_messages_;
+        bool is_writing_ {false};
     };
 }

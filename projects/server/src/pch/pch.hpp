@@ -5,6 +5,7 @@
 #include <vector>
 #include <algorithm>
 #include <cstdlib>
+#include <queue>
 
 #include <boost/beast/core.hpp>
 #include <boost/beast/websocket.hpp>
