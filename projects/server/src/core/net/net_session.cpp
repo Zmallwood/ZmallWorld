@@ -1,3 +1,5 @@
+// Copright 2024 Andreas Åkerberg
+
 #include "net_session.hpp"
 #include "boost/beast/core/flat_buffer.hpp"
 #include "boost/beast/core/multi_buffer.hpp"

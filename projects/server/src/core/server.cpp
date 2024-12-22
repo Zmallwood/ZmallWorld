@@ -1,3 +1,5 @@
+// Copright 2024 Andreas Åkerberg
+
 #include "server.hpp"
 #include "net/net_server.hpp"
 #include "pch/pch.hpp"

@@ -1,3 +1,5 @@
+// Copright 2024 Andreas Åkerberg
+
 #pragma once
 #include "command_types.hpp"
 

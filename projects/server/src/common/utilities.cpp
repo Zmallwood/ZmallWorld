@@ -1,3 +1,5 @@
+// Copright 2024 Andreas Åkerberg
+
 #include "utilities.hpp"
 
 namespace forr {

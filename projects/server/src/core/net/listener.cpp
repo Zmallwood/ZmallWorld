@@ -1,3 +1,5 @@
+// Copright 2024 Andreas Åkerberg
+
 #include "listener.hpp"
 #include "pch/pch.hpp"
 #include "net_session.hpp"
