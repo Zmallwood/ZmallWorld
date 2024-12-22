@@ -35,13 +35,15 @@ namespace forr {
             return fail(ec, "accept");
 
         session_loop_ = std::make_shared<session_loop>(shared_from_this());
-        session_loop_->march();
+        do_read();
         //do_read();
     }
 
     void net_session::do_read() {
         // Read a message into our buffer
         ws_.async_read(read_buffer_, beast::bind_front_handler(&net_session::on_read, shared_from_this()));
+
+        
     }
     
     std::string net_session::get_last_message() {
@@ -63,7 +65,8 @@ namespace forr {
         last_message_ = s;
 
         read_buffer_.consume(read_buffer_.size());
-        session_loop_->march();
+        session_loop_->update();
+        session_loop_->render();
         //do_write("tjoho");
     }
 
@@ -95,9 +98,9 @@ namespace forr {
         // Clear the buffer
         write_buffer_.consume(write_buffer_.size());
 
+
         do_write();
 
-        //session_loop_->march();
         //do_read();
     }
 }

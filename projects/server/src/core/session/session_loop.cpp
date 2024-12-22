@@ -2,32 +2,32 @@
 
 #include "session_loop.hpp"
 #include "core/net/net_session.hpp"
+#include "system_menu/system_menu.hpp"
 
 namespace forr {
-    session_loop::session_loop(std::shared_ptr<net_session> net_session) : net_session_(net_session) {
+    session_loop::session_loop(std::shared_ptr<net_session> net_session)
+        : net_session_(net_session), system_menu_(std::make_shared<system_menu>()) {
     }
 
-    void session_loop::march() {
-        switch (current_command_type_) {
-        case command_types::read: {
-            net_session_->do_read();
-            auto message = net_session_->get_last_message();
-            std::cout << "READ: " << message << std::endl;
-            current_command_type_ = command_types::write;
-        } break;
-        case forr::command_types::write: {
-            net_session_->add_message("clear;0;150;255");
-            net_session_->add_message("draw_text;10;60;ZmallWorld menu:");
-            net_session_->add_message("draw_text;10;120;================");
-            for (auto i = 0; i < menu_options_.size(); i++) {
-                std::string s = "draw_text;10;" + std::to_string(120 + (i + 1) * 60) + ";* " + menu_options_[i];
-                net_session_->add_message(s);
+    void session_loop::update() {
+        auto message = net_session_->get_last_message();
+        auto parts = split(message, ';');
+        if (parts[0] == "key_down") {
+            auto key = std::stoi(parts[1].data());
+            switch (key) {
+            case key_codes::k_arrow_up:
+                system_menu_->select_up();
+                break;
+            case key_codes::k_arrow_down:
+                system_menu_->select_down();
+                break;
             }
-            // net_session_->do_write("render_finished");
-            net_session_->do_write();
-            current_command_type_ = command_types::read;
-            march();
-        } break;
         }
+    }
+
+    void session_loop::render() {
+        system_menu_->render(net_session_);
+        net_session_->do_write();
+        net_session_->do_read();
     }
 }

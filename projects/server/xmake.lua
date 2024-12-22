@@ -7,6 +7,7 @@ target("ZmallWorldServer")
     add_packages("boost", {components="beast"})
     set_pcxxheader("src/pch/pch.hpp")
     add_cxxflags(
+      "-std=c++20",
       "-I", "src/",
       { force = true }
     )
