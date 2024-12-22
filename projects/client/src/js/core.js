@@ -1,6 +1,8 @@
 var init = function() {
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
+ctx.canvas.width  = window.innerWidth;
+  ctx.canvas.height = window.innerHeight;
     ctx.fillStyle = "red";
     ctx.fillRect(0, 0, 150, 75);
     var image = new Image();
