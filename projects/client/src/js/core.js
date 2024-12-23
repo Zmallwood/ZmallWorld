@@ -1,5 +1,4 @@
-var connect = function(port) {
-
+window.connect = function (port) {
   const canvas = document.getElementById("myCanvas");
   const ctx = canvas.getContext("2d");
   ctx.canvas.width = window.innerWidth;
@@ -9,19 +8,14 @@ var connect = function(port) {
   ctx.fillStyle = "rgb(0,255,0)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  var image_ground_grass = new Image();
-  image_ground_grass.onload = function () {
-    ctx.drawImage(image, 0, 0);
-  };
-  image_ground_grass.src = "./resources/images/ground_grass.png";
 
-  var image_default_scene_background = new Image();
-  image_default_scene_background.src = "./resources/images/dark_world/scene_graphics/default_scene_background.png";
+  var images = {}
 
-  images = {
-    "ground_grass": image_ground_grass,
-    "default_scene_background": image_default_scene_background
-  };
+  for (const image_name of image_names) {
+    var image = new Image();
+    image.src = "./resources/images/" + image_name + ".png";
+    images[image_name] = image;
+  }
 
   ctx.font = "48px serif";
   var ws = new WebSocket("ws://localhost:" + port);
@@ -50,12 +44,12 @@ var connect = function(port) {
         var y = parts[3];
         var w = parts[4];
         var h = parts[5];
-        var xpx = x*ctx.canvas.width;
-        var ypx = y*ctx.canvas.height;
-        var wpx = w*ctx.canvas.width;
-        var hpx = h*ctx.canvas.height;
+        var xpx = x * ctx.canvas.width;
+        var ypx = y * ctx.canvas.height;
+        var wpx = w * ctx.canvas.width;
+        var hpx = h * ctx.canvas.height;
         ctx.drawImage(images[image_name], xpx, ypx, wpx, hpx);
-      break;
+        break;
       case "draw_text":
         var x = parts[1];
         var y = parts[2];
@@ -64,9 +58,9 @@ var connect = function(port) {
         ctx.fillText(text, x, y);
         break;
       case "redirect":
-        var port = parts[1]
-        connect(port)
-      break;
+        var port = parts[1];
+        connect(port);
+        break;
     }
   };
 
@@ -78,9 +72,8 @@ var connect = function(port) {
     e = e || window.event;
     ws.send("key_down;" + e.keyCode);
   };
-}
+};
 
-
-var init = function () {
+window.init = function () {
   connect(8080);
 };
