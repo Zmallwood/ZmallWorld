@@ -11,6 +11,7 @@ namespace forr {
         scene_manager();
         void update();
         void render(std::shared_ptr<net_session> net_session);
+        void go_to_scene(std::string_view scene_name);
 
       private:
         std::map<int, std::shared_ptr<i_scene>> scenes_;
