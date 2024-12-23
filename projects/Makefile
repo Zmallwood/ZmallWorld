@@ -1,4 +1,9 @@
-all: build_server
+all: build_server build_darkworld
+
+build_darkworld:
+	cd server/apps/DarkWorld; \
+	xmake -P .; \
+	xmake project  -k compile_commands -P .;
 
 build_server:
 	cd server; \
