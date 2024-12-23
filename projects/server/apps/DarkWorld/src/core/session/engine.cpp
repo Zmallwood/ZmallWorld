@@ -3,11 +3,9 @@
 #include "engine.hpp"
 
 namespace forr {
-void engine::update() {
+    void engine::update() {
+    }
 
-}
-
-void engine::render() {
-  
-}
+    void engine::render() {
+    }
 }
