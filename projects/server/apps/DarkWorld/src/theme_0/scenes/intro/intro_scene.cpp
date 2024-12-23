@@ -11,6 +11,7 @@ namespace forr {
       net_session->add_message("clear;0;150;255");
       net_session->add_message("draw_image;default_scene_background;0.0;0.0;1.0;1.0");
       net_session->add_message("draw_image;dark_world_logo;0.4;0.2;0.2;0.1");
+      net_session->add_message("draw_text;Press to start;400;300");
       net_session->do_write();
     }
 }

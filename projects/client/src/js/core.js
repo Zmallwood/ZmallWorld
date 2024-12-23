@@ -51,9 +51,9 @@ window.connect = function (port) {
         ctx.drawImage(images[image_name], xpx, ypx, wpx, hpx);
         break;
       case "draw_text":
-        var x = parts[1];
-        var y = parts[2];
-        var text = parts[3];
+        var text = parts[1];
+        var x = parts[2];
+        var y = parts[3];
         ctx.fillStyle = "rgb(0,0,0)";
         ctx.fillText(text, x, y);
         break;
