@@ -8,8 +8,7 @@ window.connect = function (port) {
   ctx.fillStyle = "rgb(0,255,0)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-
-  var images = {}
+  var images = {};
 
   for (const image_name of image_names) {
     var image = new Image();
@@ -54,7 +53,14 @@ window.connect = function (port) {
         var text = parts[1];
         var x = parts[2];
         var y = parts[3];
-        ctx.fillStyle = "rgb(0,0,0)";
+        if (parts.length >= 7) {
+          var r = parts[4];
+          var g = parts[5];
+          var b = parts[6];
+          ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
+        } else {
+          ctx.fillStyle = "rgb(0,0,0)";
+        }
         ctx.fillText(text, x, y);
         break;
       case "redirect":
