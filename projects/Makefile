@@ -1,9 +1,13 @@
-all: build_server build_darkworld
+all: build_image_list build_server build_darkworld
 
 build_darkworld:
 	cd server/apps/DarkWorld; \
 	xmake -P .; \
 	xmake project  -k compile_commands -P .;
+
+build_image_list:
+	cd client; \
+	make;
 
 build_server:
 	cd server; \

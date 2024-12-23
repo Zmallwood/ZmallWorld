@@ -1,5 +1,5 @@
-  var image_names = [
-    "ground_grass",
-    "default_scene_background",
-    "dark_world_logo",
-  ];
+var image_names = [
+  "dark_world_logo",
+  "default_scene_background",
+  "ground_grass",
+]
