@@ -5,6 +5,7 @@
 #include <vector>
 #include <thread>
 #include <queue>
+#include <map>
 
 #include <boost/beast/core.hpp>
 #include <boost/beast/websocket.hpp>
@@ -13,3 +14,4 @@
 #include "common/singleton.hpp"
 #include "common/key_codes.hpp"
 #include "common/utilities.hpp"
+#include "common/hash.hpp"

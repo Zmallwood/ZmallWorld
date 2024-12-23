@@ -14,6 +14,5 @@
 #include <boost/beast/websocket.hpp>
 #include <boost/asio/strand.hpp>
 
-#include "common/singleton.hpp"
 #include "common/key_codes.hpp"
 #include "common/utilities.hpp"

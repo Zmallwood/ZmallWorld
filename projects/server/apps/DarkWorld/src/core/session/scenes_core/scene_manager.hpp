@@ -3,16 +3,17 @@
 #pragma once
 
 namespace forr {
-    class scene_manager;
+    class i_scene;
     class net_session;
 
-    class engine {
+    class scene_manager {
       public:
-        engine();
+        scene_manager();
         void update();
         void render(std::shared_ptr<net_session> net_session);
 
       private:
-        std::shared_ptr<scene_manager> scene_manager_;
+        std::map<int, std::shared_ptr<i_scene>> scenes_;
+        int current_scene_ {0};
     };
 }

@@ -1,6 +1,16 @@
 [
 {
   "directory": "/home/andreas/code/hobby/ZmallWorld/repo/projects/server/apps/DarkWorld",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-I", "/home/andreas/.xmake/packages/n/nlohmann_json/v3.11.3/b4e38c4916bd42c39063f144e29030df/include", "-I", "/home/andreas/.xmake/packages/b/boost/1.86.0/4a6030b84a3047e1bd19ef7b130b2be4/include", "-std=c++20", "-I", "src/", "-o", "build/.objs/DarkWorld/linux/x86_64/release/src/theme_0/scenes/intro/intro_scene.cpp.o", "src/theme_0/scenes/intro/intro_scene.cpp"],
+  "file": "src/theme_0/scenes/intro/intro_scene.cpp"
+},
+{
+  "directory": "/home/andreas/code/hobby/ZmallWorld/repo/projects/server/apps/DarkWorld",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-I", "/home/andreas/.xmake/packages/n/nlohmann_json/v3.11.3/b4e38c4916bd42c39063f144e29030df/include", "-I", "/home/andreas/.xmake/packages/b/boost/1.86.0/4a6030b84a3047e1bd19ef7b130b2be4/include", "-std=c++20", "-I", "src/", "-o", "build/.objs/DarkWorld/linux/x86_64/release/src/common/hash.cpp.o", "src/common/hash.cpp"],
+  "file": "src/common/hash.cpp"
+},
+{
+  "directory": "/home/andreas/code/hobby/ZmallWorld/repo/projects/server/apps/DarkWorld",
   "arguments": ["/usr/bin/gcc", "-c", "-m64", "-I", "/home/andreas/.xmake/packages/n/nlohmann_json/v3.11.3/b4e38c4916bd42c39063f144e29030df/include", "-I", "/home/andreas/.xmake/packages/b/boost/1.86.0/4a6030b84a3047e1bd19ef7b130b2be4/include", "-std=c++20", "-I", "src/", "-o", "build/.objs/DarkWorld/linux/x86_64/release/src/common/utilities.cpp.o", "src/common/utilities.cpp"],
   "file": "src/common/utilities.cpp"
 },
@@ -28,6 +38,11 @@
   "directory": "/home/andreas/code/hobby/ZmallWorld/repo/projects/server/apps/DarkWorld",
   "arguments": ["/usr/bin/gcc", "-c", "-m64", "-I", "/home/andreas/.xmake/packages/n/nlohmann_json/v3.11.3/b4e38c4916bd42c39063f144e29030df/include", "-I", "/home/andreas/.xmake/packages/b/boost/1.86.0/4a6030b84a3047e1bd19ef7b130b2be4/include", "-std=c++20", "-I", "src/", "-o", "build/.objs/DarkWorld/linux/x86_64/release/src/core/session/engine.cpp.o", "src/core/session/engine.cpp"],
   "file": "src/core/session/engine.cpp"
+},
+{
+  "directory": "/home/andreas/code/hobby/ZmallWorld/repo/projects/server/apps/DarkWorld",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-I", "/home/andreas/.xmake/packages/n/nlohmann_json/v3.11.3/b4e38c4916bd42c39063f144e29030df/include", "-I", "/home/andreas/.xmake/packages/b/boost/1.86.0/4a6030b84a3047e1bd19ef7b130b2be4/include", "-std=c++20", "-I", "src/", "-o", "build/.objs/DarkWorld/linux/x86_64/release/src/core/session/scenes_core/scene_manager.cpp.o", "src/core/session/scenes_core/scene_manager.cpp"],
+  "file": "src/core/session/scenes_core/scene_manager.cpp"
 },
 {
   "directory": "/home/andreas/code/hobby/ZmallWorld/repo/projects/server/apps/DarkWorld",

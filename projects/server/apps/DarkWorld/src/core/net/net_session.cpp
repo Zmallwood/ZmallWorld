@@ -60,7 +60,7 @@ namespace forr {
 
         read_buffer_.consume(read_buffer_.size());
         engine_->update();
-        engine_->render();
+        engine_->render(shared_from_this());
     }
 
     void net_session::add_message(std::string_view message) {
