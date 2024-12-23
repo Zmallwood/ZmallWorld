@@ -11,4 +11,4 @@ build_image_list:
 		pure_name=$$(echo $$base_name| rev | cut -c5- | rev); \
 		echo "  \""$$pure_name"\"", >> $$image_list_file; \
 	done; \
-	echo "]" >> $$image_list_file;
+	echo "];" >> $$image_list_file;

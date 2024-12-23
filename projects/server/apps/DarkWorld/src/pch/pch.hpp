@@ -6,6 +6,7 @@
 #include <thread>
 #include <queue>
 #include <map>
+#include <set>
 
 #include <boost/beast/core.hpp>
 #include <boost/beast/websocket.hpp>
