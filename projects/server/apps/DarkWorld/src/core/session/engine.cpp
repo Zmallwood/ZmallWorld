@@ -1,10 +1,12 @@
 // Copyright 2024 Andreas Åkerberg
 
 #include "engine.hpp"
+#include "input/keyboard_input.hpp"
 #include "scenes_core/scene_manager.hpp"
 
 namespace forr {
-    engine::engine() : scene_manager_(std::make_shared<scene_manager>()) {
+    engine::engine()
+        : scene_manager_(std::make_shared<scene_manager>()), keyboard_input_(std::make_shared<keyboard_input>()) {
     }
 
     void engine::update() {

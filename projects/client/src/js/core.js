@@ -1,20 +1,10 @@
 window.connect = function (port) {
-  const canvas = document.getElementById("myCanvas");
+  const canvas = document.getElementById("main_canvas");
   const ctx = canvas.getContext("2d");
   ctx.canvas.width = window.innerWidth;
   ctx.canvas.height = window.innerHeight;
-  ctx.fillStyle = "red";
-  ctx.fillRect(0, 0, 150, 75);
-  ctx.fillStyle = "rgb(0,255,0)";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  var images = {};
-
-  for (const image_name of image_names) {
-    var image = new Image();
-    image.src = "./resources/images/" + image_name + ".png";
-    images[image_name] = image;
-  }
+  load_script("image_loading.js");
 
   ctx.font = "48px serif";
   var ws = new WebSocket("ws://localhost:" + port);
