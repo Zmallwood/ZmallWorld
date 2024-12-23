@@ -11,9 +11,9 @@ namespace forr {
         current_scene_ = hash("intro_scene");
     }
 
-    void scene_manager::update() {
+    void scene_manager::update(std::shared_ptr<engine> engine) {
         if (scenes_.contains(current_scene_))
-            scenes_.at(current_scene_)->update();
+            scenes_.at(current_scene_)->update(engine);
     }
 
     void scene_manager::render(std::shared_ptr<net_session> net_session) {

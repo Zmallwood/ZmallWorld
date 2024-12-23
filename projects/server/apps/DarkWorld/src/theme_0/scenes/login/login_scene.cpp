@@ -4,7 +4,7 @@
 #include "core/net/net_session.hpp"
 
 namespace forr {
-    void login_scene::update() {
+    void login_scene::update(std::shared_ptr<engine> engine) {
     }
 
     void login_scene::render(std::shared_ptr<net_session> net_session) {

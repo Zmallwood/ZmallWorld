@@ -3,7 +3,7 @@
 #include "net_session.hpp"
 #include "boost/beast/core/flat_buffer.hpp"
 #include "boost/beast/core/multi_buffer.hpp"
-#include "core/session/engine.hpp"
+#include "core/session/session.hpp"
 #include "pch/pch.hpp"
 
 namespace forr {
@@ -34,7 +34,7 @@ namespace forr {
         if (ec)
             return fail(ec, "accept");
 
-        engine_ = std::make_shared<engine>();
+        session_ = std::make_shared<session>();
         do_read();
     }
 
@@ -59,8 +59,9 @@ namespace forr {
         last_message_ = std::string(boost::asio::buffer_cast<const char *>(read_buffer_.data()), read_buffer_.size());
 
         read_buffer_.consume(read_buffer_.size());
-        engine_->update();
-        engine_->render(shared_from_this());
+        session_->handle_message(last_message_);
+        session_->process(shared_from_this());
+        do_read();
     }
 
     void net_session::add_message(std::string_view message) {

@@ -12,7 +12,7 @@ namespace forr {
     void session_loop::update() {
         auto message = net_session_->get_last_message();
         auto parts = split(message, ';');
-        if (parts[0] == "key_down") {
+        if (parts[0] == "key_press") {
             auto key = std::stoi(parts[1].data());
             switch (key) {
             case key_codes::k_arrow_up:

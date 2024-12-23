@@ -25,7 +25,7 @@ var connect = function (port) {
 
   document.onkeydown = function (e) {
     e = e || window.event;
-    ws.send("key_down;" + e.keyCode);
+    ws.send("key_press;" + e.keyCode);
   };
 };
 

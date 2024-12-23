@@ -5,6 +5,11 @@
 namespace forr {
   class keyboard_input {
   public:
+    void register_key_press(int key_code);
+    void register_key_release(int key_code);
+    bool any_key_is_pressed() const;
     
+  private:
+    std::set<int> pressed_keys_;
   };
 }

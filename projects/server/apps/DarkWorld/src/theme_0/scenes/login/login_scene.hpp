@@ -8,7 +8,7 @@ namespace forr {
   class login_scene : public i_scene
   {
   public:
-    void update() override;
+    void update(std::shared_ptr<engine> engine) override;
     void render(std::shared_ptr<net_session> net_session) override;
   };
 }

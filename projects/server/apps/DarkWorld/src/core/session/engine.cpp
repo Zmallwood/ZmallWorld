@@ -10,7 +10,7 @@ namespace forr {
     }
 
     void engine::update() {
-        scene_manager_->update();
+        scene_manager_->update(shared_from_this());
     }
 
     void engine::render(std::shared_ptr<net_session> net_session) {

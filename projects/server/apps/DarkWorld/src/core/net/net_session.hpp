@@ -4,7 +4,7 @@
 
 namespace forr {
 
-    class engine;
+    class session;
     // Echoes back all received WebSocket messages
     class net_session : public std::enable_shared_from_this<net_session> {
       public:
@@ -25,7 +25,7 @@ namespace forr {
         boost::beast::websocket::stream<boost::beast::tcp_stream> ws_;
         boost::beast::flat_buffer read_buffer_;
         boost::beast::flat_buffer write_buffer_;
-        std::shared_ptr<engine> engine_;
+        std::shared_ptr<session> session_;
         std::queue<std::string> outgoing_messages_;
         bool is_writing_ {false};
         std::string last_message_;
