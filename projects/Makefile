@@ -21,7 +21,10 @@ run:
 	cd ./server;\
 	screen -d -m xmake run ZmallWorldServer 0.0.0.0 8080 1;
 	xdg-open ./client/src/index.html;
-	screen -r
+	cd ./server/apps/DarkWorld;\
+	screen -d -m xmake run DarkWorld -P .;\
+	screen -RR
+	pkill screen
 
 run_zmallsim:
 	cd ./server/apps/ZmallSim;\
