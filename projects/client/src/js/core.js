@@ -6,13 +6,23 @@ var connect = function(port) {
   ctx.canvas.height = window.innerHeight;
   ctx.fillStyle = "red";
   ctx.fillRect(0, 0, 150, 75);
-  var image = new Image();
   ctx.fillStyle = "rgb(0,255,0)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  image.onload = function () {
+
+  var image_ground_grass = new Image();
+  image_ground_grass.onload = function () {
     ctx.drawImage(image, 0, 0);
   };
-  image.src = "./resources/images/ground_grass.png";
+  image_ground_grass.src = "./resources/images/ground_grass.png";
+
+  var image_default_scene_background = new Image();
+  image_default_scene_background.src = "./resources/images/dark_world/scene_graphics/default_scene_background.png";
+
+  images = {
+    "ground_grass": image_ground_grass,
+    "default_scene_background": image_default_scene_background
+  };
+
   ctx.font = "48px serif";
   var ws = new WebSocket("ws://localhost:" + port);
   ws.onopen = function () {
@@ -34,6 +44,18 @@ var connect = function(port) {
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         break;
+      case "draw_image":
+        var image_name = parts[1];
+        var x = parts[2];
+        var y = parts[3];
+        var w = parts[4];
+        var h = parts[5];
+        var xpx = x*ctx.canvas.width;
+        var ypx = y*ctx.canvas.height;
+        var wpx = w*ctx.canvas.width;
+        var hpx = h*ctx.canvas.height;
+        ctx.drawImage(images[image_name], xpx, ypx, wpx, hpx);
+      break;
       case "draw_text":
         var x = parts[1];
         var y = parts[2];
