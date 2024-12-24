@@ -24,7 +24,7 @@ clean:
 run:
 	cd ./server;\
 	screen -d -m xmake run ZmallWorldServer 0.0.0.0 8080 1;
-	screen -d -m xdg-open ./client/src/index.html; \
+	xdg-open ./client/src/index.html; \
 	cd ./server/apps/DarkWorld;\
 	screen -d -m xmake run DarkWorld -P .;\
 	screen -RR

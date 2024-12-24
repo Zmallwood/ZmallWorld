@@ -12,7 +12,7 @@ var connect = function (port) {
   var ws = new WebSocket("ws://localhost:" + port);
   ws.onopen = function () {
     console.log("socket connection opened properly");
-    ws.send("handshake"); // send a message
+    ws.send("canvas_size;" + ctx.canvas.width + ";" + ctx.canvas.height); // send a message
   };
 
   ws.onmessage = function (evt) {
