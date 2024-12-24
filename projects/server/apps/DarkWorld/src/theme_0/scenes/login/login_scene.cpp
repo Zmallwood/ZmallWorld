@@ -2,9 +2,15 @@
 
 #include "login_scene.hpp"
 #include "core/net/net_session.hpp"
+#include "core/session/engine.hpp"
+#include "core/session/scenes_core/scene_manager.hpp"
+#include "core/session/input/keyboard_input.hpp"
 
 namespace forr {
     void login_scene::update(std::shared_ptr<engine> engine) {
+      if (engine->get_keyboard_input()->any_key_is_pressed()) {
+        engine->get_scene_manager()->go_to_scene("main_scene");
+      }
     }
 
     void login_scene::render(std::shared_ptr<net_session> net_session) {

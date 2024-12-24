@@ -3,11 +3,13 @@
 #include "scene_manager.hpp"
 #include "theme_0/scenes/intro/intro_scene.hpp"
 #include "theme_0/scenes/login/login_scene.hpp"
+#include "theme_0/scenes/main/main_scene.hpp"
 
 namespace forr {
     scene_manager::scene_manager() {
         scenes_.insert({hash("intro_scene"), std::make_shared<intro_scene>()});
         scenes_.insert({hash("login_scene"), std::make_shared<login_scene>()});
+        scenes_.insert({hash("main_scene"), std::make_shared<main_scene>()});
         current_scene_ = hash("intro_scene");
     }
 
