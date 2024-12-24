@@ -4,7 +4,7 @@
 
 #include "core/session/scenes_core/i_scene.hpp"
 
-namespace forr {
+namespace dw {
   class login_scene : public i_scene
   {
   public:

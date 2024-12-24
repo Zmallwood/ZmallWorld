@@ -4,7 +4,7 @@
 #include "core/net/net_session.hpp"
 #include "modules/world_view.hpp"
 
-namespace forr {
+namespace dw {
     main_scene::main_scene() : world_view_(std::make_shared<world_view>()) {
     }
 

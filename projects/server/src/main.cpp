@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
     auto const port = static_cast<unsigned short>(std::atoi(argv[2]));
     auto const threads = std::max<int>(1, std::atoi(argv[3]));
 
-    forr::server server;
+    zw::server server;
     server.run(address, port, threads);
 
     return EXIT_SUCCESS;

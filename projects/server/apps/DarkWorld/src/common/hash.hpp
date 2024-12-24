@@ -2,6 +2,6 @@
 
 #pragma once
 
-namespace forr {
+namespace dw {
     int hash(std::string_view text);
 }

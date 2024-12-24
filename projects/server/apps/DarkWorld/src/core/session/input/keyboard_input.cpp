@@ -2,7 +2,7 @@
 
 #include "keyboard_input.hpp"
 
-namespace forr {
+namespace dw {
     void keyboard_input::register_key_press(int key_code) {
       pressed_keys_.insert(key_code);
     }

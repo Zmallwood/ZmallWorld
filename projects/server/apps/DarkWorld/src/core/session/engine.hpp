@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace forr {
+namespace dw {
     class scene_manager;
     class net_session;
     class keyboard_input;

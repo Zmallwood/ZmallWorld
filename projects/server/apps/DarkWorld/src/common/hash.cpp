@@ -2,7 +2,7 @@
 
 #include "hash.hpp"
 
-namespace forr {
+namespace dw {
     int hash(std::string_view text) {
         unsigned long hash{5381};
 

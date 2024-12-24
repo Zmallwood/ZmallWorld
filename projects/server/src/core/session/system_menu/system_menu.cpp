@@ -4,7 +4,7 @@
 #include "core/net/net_session.hpp"
 #include "pch/pch.hpp"
 
-namespace forr {
+namespace zw {
     void system_menu::render(std::shared_ptr<net_session> net_session) {
 
         net_session->add_message("clear;0;150;255");

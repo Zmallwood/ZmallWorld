@@ -4,7 +4,7 @@
 #include "core/net/net_session.hpp"
 #include "system_menu/system_menu.hpp"
 
-namespace forr {
+namespace zw {
     session_loop::session_loop(std::shared_ptr<net_session> net_session)
         : net_session_(net_session), system_menu_(std::make_shared<system_menu>()) {
     }

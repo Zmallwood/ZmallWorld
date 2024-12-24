@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace forr {
+namespace dw {
     class i_scene;
     class net_session;
     class engine;

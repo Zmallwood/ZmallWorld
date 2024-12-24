@@ -6,7 +6,7 @@
 #include "core/session/session.hpp"
 #include "pch/pch.hpp"
 
-namespace forr {
+namespace dw {
     namespace beast = boost::beast;
     namespace http = beast::http;
     namespace websocket = beast::websocket;

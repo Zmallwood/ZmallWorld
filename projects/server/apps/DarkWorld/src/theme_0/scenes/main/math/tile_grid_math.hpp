@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace forr {
+namespace dw {
   namespace tile_grid_math {
     sizef calc_tile_size();
   }

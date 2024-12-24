@@ -2,8 +2,7 @@
 
 #pragma once
 
-namespace forr {
-
+namespace dw {
     class session;
     // Echoes back all received WebSocket messages
     class net_session : public std::enable_shared_from_this<net_session> {

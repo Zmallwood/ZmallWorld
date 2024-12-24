@@ -6,7 +6,7 @@
 #include "core/session/scenes_core/scene_manager.hpp"
 #include "core/session/input/keyboard_input.hpp"
 
-namespace forr {
+namespace dw {
     void intro_scene::update(std::shared_ptr<engine> engine) {
       if (engine->get_keyboard_input()->any_key_is_pressed()) {
         engine->get_scene_manager()->go_to_scene("login_scene");

@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace forr {
+namespace dw {
   class net_session;
 
   class world_view {

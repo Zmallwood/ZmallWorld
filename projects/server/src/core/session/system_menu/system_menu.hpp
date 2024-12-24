@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace forr {
+namespace zw {
     class net_session;
 
     class system_menu {

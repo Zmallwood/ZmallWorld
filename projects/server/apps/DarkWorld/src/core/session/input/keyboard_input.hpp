@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace forr {
+namespace dw {
   class keyboard_input {
   public:
     void register_key_press(int key_code);

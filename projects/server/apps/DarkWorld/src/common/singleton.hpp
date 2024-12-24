@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace forr {
+namespace dw {
     template <class T>
     T &_() {
         static T instance;

@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace forr {
+namespace dw {
     class sizef {
       public:
         float w{0.0f};

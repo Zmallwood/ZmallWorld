@@ -4,7 +4,7 @@
 #include "engine.hpp"
 #include "input/keyboard_input.hpp"
 
-namespace forr {
+namespace dw {
   session::session() : engine_(std::make_shared<engine>()) {
   }
 

@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace forr {
+namespace zw {
     class server {
       public:
         void run(boost::asio::ip::address address, unsigned short port, int threads);

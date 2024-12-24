@@ -3,7 +3,7 @@
 #include "utilities.hpp"
 #include "pch/pch.hpp"
 
-namespace forr {
+namespace zw {
     void fail(boost::beast::error_code ec, char const *what) {
         std::cerr << what << ": " << ec.message() << "\n";
     }

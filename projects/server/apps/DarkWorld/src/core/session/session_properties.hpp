@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace forr {
+namespace dw {
   class session_properties {
     public:
 

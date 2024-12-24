@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace forr {
+namespace zw {
     namespace key_codes {
         inline static const int k_arrow_left = 37;
         inline static const int k_arrow_up = 38;

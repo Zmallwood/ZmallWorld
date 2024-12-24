@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace forr {
+namespace zw {
 
     class session_loop;
     // Echoes back all received WebSocket messages

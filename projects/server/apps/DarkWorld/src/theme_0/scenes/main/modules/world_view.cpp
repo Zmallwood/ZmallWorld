@@ -4,7 +4,7 @@
 #include "core/net/net_session.hpp"
 #include "theme_0/scenes/main/math/tile_grid_math.hpp"
 
-namespace forr {
+namespace dw {
     void world_view::render(std::shared_ptr<net_session> net_session) {
       auto tile_size = tile_grid_math::calc_tile_size();
       for (auto y = 0; y < 11; y++) {

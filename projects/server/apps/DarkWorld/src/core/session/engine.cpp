@@ -4,7 +4,7 @@
 #include "input/keyboard_input.hpp"
 #include "scenes_core/scene_manager.hpp"
 
-namespace forr {
+namespace dw {
     engine::engine()
         : scene_manager_(std::make_shared<scene_manager>()), keyboard_input_(std::make_shared<keyboard_input>()) {
     }
