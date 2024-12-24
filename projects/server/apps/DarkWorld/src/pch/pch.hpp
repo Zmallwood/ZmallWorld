@@ -16,3 +16,4 @@
 #include "common/key_codes.hpp"
 #include "common/utilities.hpp"
 #include "common/hash.hpp"
+#include "common/math_lib/sizef.hpp"
