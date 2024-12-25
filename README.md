@@ -1,4 +1,30 @@
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
 # About the project
+
 <div align="center">
   <img src="media/images/zmall_world_logo.png" alt="Zmall World">
 </div>
@@ -7,7 +33,8 @@ Zmall World is a web platform for running other web apps, developed in javascrip
 The client uses web sockets for communication and receives and processes general draw instructions which renders unto a double buffered HTML5 canvas.
 
 ## Built with
-* [Boost](https://www.boost.org)
+
+- [Boost](https://www.boost.org)
 
 # Getting started
 
@@ -40,6 +67,7 @@ This will start up the Zmall World server along with the provided default app Da
     make run_dev
 
 # Provided default apps
+
 <div align="center">
   <img src="media/images/dark_world_logo.png" alt="Dark World">
 </div>
@@ -47,19 +75,23 @@ This will start up the Zmall World server along with the provided default app Da
 Dark World is an online role playing game using the Zmall World platform.
 
 # Roadmap
-- [X] Create README
-- [X] Create working prototype for Zmall World
+
+- [x] Create README
+- [x] Create working prototype for Zmall World
 - [ ] Create working prototype for Dark World
 
 # License
+
 Distributed under the MIT License. See LICENSE file for more information.
 
 # Contact
+
 Andreas Åkerberg - zmallwood@proton.me
 
 Project Link: https://github.com/ZmallWood/ZmallWorld
 
 # Acknowledgements
-* [xmake](https://xmake.io)
-* [Daimonin](https://www.daimonin.org)
-* [The Mana World](https://www.themanaworld.org)
+
+- [xmake](https://xmake.io)
+- [Daimonin](https://www.daimonin.org)
+- [The Mana World](https://www.themanaworld.org)
