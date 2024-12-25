@@ -4,7 +4,7 @@
 
 namespace dw {
     template <class T>
-    T &_() {
+    T &get_singleton() {
         static T instance;
         return instance;
     }

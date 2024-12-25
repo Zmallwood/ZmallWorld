@@ -15,8 +15,8 @@ namespace dw {
 
     void login_scene::render(std::shared_ptr<net_session> net_session,
                              std::shared_ptr<session_properties> session_properties) {
-        net_session->add_message("clear;0;150;255");
-        net_session->add_message("draw_image;default_scene_background;0.0;0.0;1.0;1.0");
-        net_session->add_message("draw_image;dark_world_logo;0.45;0.2;0.1;0.05");
+        clear(net_session, 0, 150, 255);
+        draw_image(net_session, "default_scene_background", 0.0, 0.0, 1.0, 1.0);
+        draw_image(net_session, "dark_world_logo", 0.45, 0.2, 0.1, 0.05);
     }
 }

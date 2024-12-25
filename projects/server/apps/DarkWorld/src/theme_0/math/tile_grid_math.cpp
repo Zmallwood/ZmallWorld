@@ -1,7 +1,7 @@
 // Copyright 2024 Andreas Åkerberg
 
 #include "tile_grid_math.hpp"
-#include "theme_0/scenes/main/configuration/game_properties.hpp"
+#include "theme_0/configuration/game_properties.hpp"
 
 namespace dw {
     namespace tile_grid_math {

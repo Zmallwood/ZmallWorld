@@ -15,10 +15,9 @@ namespace dw {
 
     void intro_scene::render(std::shared_ptr<net_session> net_session,
                              std::shared_ptr<session_properties> session_properties) {
-        net_session->add_message("clear;0;150;255");
-        net_session->add_message("draw_image;default_scene_background;0.0;0.0;1.0;1.0");
-        net_session->add_message("draw_image;dark_world_logo;0.4;0.2;0.2;0.1");
+        draw_image(net_session, "default_scene_background", 0.0, 0.0, 1.0, 1.0);
+        draw_image(net_session, "dark_world_logo", 0.4, 0.2, 0.2, 0.1);
         if (get_ticks() % 800 < 400)
-            net_session->add_message("draw_text;Press to start;0.5;0.5;255;150;0");
+            draw_text(net_session, "Press to start", 0.5, 0.5, 255, 150, 0);
     }
 }

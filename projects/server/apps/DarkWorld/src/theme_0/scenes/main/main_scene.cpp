@@ -17,7 +17,7 @@ namespace dw {
 
     void main_scene::render(std::shared_ptr<net_session> net_session,
                             std::shared_ptr<session_properties> session_properties) {
-        net_session->add_message("clear;0;150;255");
+        clear(net_session, 0, 150, 255);
         world_view_->render(net_session, session_properties);
         fps_counter_->render(net_session);
     }
