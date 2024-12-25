@@ -25,7 +25,7 @@ Install instructions can be found at [xmake.io](https://xmake.io)
 
 ## Running instructions
 
-**Run command**
+**Run command for development**
 
     make run_dev
 
