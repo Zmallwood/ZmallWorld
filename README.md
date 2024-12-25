@@ -34,10 +34,8 @@ This will start up the Zmall World server along with the provided default app Da
     make run_dev
 
 ## Provided apps
-
-### Dark World
 <div align="center">
-  <img src="media/images/dark_world_logo.png" alt="Logo">
+  <img src="media/images/dark_world_logo.png" alt="Dark World">
 </div>
 
 Dark World is an online role playing game using the Zmall World platform.
