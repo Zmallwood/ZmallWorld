@@ -26,8 +26,8 @@ namespace dw {
         boost::beast::flat_buffer write_buffer_;
         std::shared_ptr<session> session_;
         std::queue<std::string> outgoing_messages_;
-        bool is_writing_ {false};
+        bool is_writing_{false};
         std::string last_message_;
-        std::vector<std::thread> threads_;
+        std::shared_ptr<std::thread> session_thread_;
     };
 }

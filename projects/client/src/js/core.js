@@ -19,7 +19,7 @@ var connect = function (port) {
   };
 
   ws.onmessage = function (evt) {
-    process_message(evt, ctx, draw_commands);
+    process_message(ws, evt, ctx, draw_commands);
   };
 
   ws.onclose = function () {
@@ -44,6 +44,7 @@ var connect = function (port) {
       eval(cmd);
     }
     ctx.restore();
+    ws.send("frame_finished");
   };
 
   draw_frame();

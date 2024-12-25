@@ -11,7 +11,7 @@ namespace dw {
       public:
         session();
         void process(std::shared_ptr<net_session> net_session);
-        void handle_message(std::string_view message);
+        void handle_message(std::shared_ptr<net_session> net_session, std::string_view message);
 
       private:
         std::shared_ptr<engine> engine_;

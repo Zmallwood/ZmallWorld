@@ -1,6 +1,6 @@
 new_draw_commands = []
 
-var process_message = function (evt, ctx, draw_commands) {
+var process_message = function (ws, evt, ctx, draw_commands) {
   var msg = evt.data;
   var parts = msg.split(";");
   switch (parts[0]) {
@@ -63,9 +63,10 @@ var process_message = function (evt, ctx, draw_commands) {
       for (entry of new_draw_commands) {
         draw_commands.push(entry);
       }
-      new_draw_commands = [];
+      new_draw_commands.length = 0;
       break;
     case "redirect":
+      ws.close();
       var port = parts[1];
       connect(port);
       break;

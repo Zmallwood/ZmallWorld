@@ -10,7 +10,6 @@ namespace dw {
         auto const port = static_cast<unsigned short>(8082);
         auto const threads = std::max<int>(1, 3);
 
-        dw::net_server net_server;
-        net_server.run(address, port, threads);
+        get_singleton<net_server>().run(address, port, threads);
     }
 }
