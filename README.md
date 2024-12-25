@@ -42,4 +42,8 @@ Distributed under the MIT License. See LICENSE file for more information.
 
 ## Contact
 Andreas Åkerberg - zmallwood@proton.me
+
 Project Link: https://github.com/ZmallWood/ZmallWorld
+
+## Acknowledgements
+* [xmake](https://xmake.io)
