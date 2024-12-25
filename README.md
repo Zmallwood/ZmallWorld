@@ -7,16 +7,16 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#build-instructions">Build Instructions</a></li>
+    <li><a href="#running-instructions">Running Instructions</a></li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#provided-default-apps">Provided Default Apps</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#dark-world">Dark World</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -67,7 +67,7 @@ This will start up the Zmall World server along with the provided default app Da
     make run_dev
 
 # Provided default apps
-
+## Dark World
 <div align="center">
   <img src="media/images/dark_world_logo.png" alt="Dark World">
 </div>
@@ -90,7 +90,7 @@ Andreas Åkerberg - zmallwood@proton.me
 
 Project Link: https://github.com/ZmallWood/ZmallWorld
 
-# Acknowledgements
+# Acknowledgments
 
 - [xmake](https://xmake.io)
 - [Daimonin](https://www.daimonin.org)
