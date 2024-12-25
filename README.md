@@ -9,9 +9,15 @@ WebPlatform for running other webapps, developed in JS and C++.
 
 Install instructions can be found at [xmake.io](https://xmake.io)
 
-**Execute**
+**Build command**
 
     make
+
+## Running instructions
+
+**Run command**
+
+    make run
 
 ## Provided apps
 
