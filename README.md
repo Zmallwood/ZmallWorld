@@ -1,3 +1,4 @@
+# About the project
 <div align="center">
   <img src="media/images/zmall_world_logo.png" alt="Zmall World">
 </div>
