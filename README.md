@@ -78,7 +78,10 @@ This will start up the Zmall World server along with the provided default app Da
   <img src="media/images/dark_world_logo.png" alt="Dark World">
 </div>
 
-Dark World is an online role playing game using the Zmall World platform.
+Dark World is an online role playing game using the Zmall World platform. The game features a unique combination of game mechanics in the form of:
+* Perma-death
+* Instagib
+* Player-versus-player combat
 
 # Roadmap
 
