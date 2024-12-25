@@ -2,8 +2,7 @@
 <div align="center">
   <img src="media/images/zmall_world_logo.png" alt="Zmall World">
 </div>
-Zmall World is a web platform for running other web apps, developed in javascript and C++. The purpose is to build a solution which utilizes one single front end written in pure HTML and Javascript which is being used to all the apps added to the platform. The apps therefore only need to provide back ends which can be written in any language as needed. The platform will redirect the use to the apps upon request.
-
+Zmall World is a web platform for running other web apps, developed in javascript and C++. The purpose is to build a solution which utilizes one single front end written in pure HTML and Javascript which is being used to all the apps added to the platform. The apps therefore only need to provide back ends which can be written in any language as needed. The platform will redirect the use to the apps upon request.  
 
 The client uses web sockets for communication and receives and processes general draw instructions which renders unto a double buffered HTML5 canvas.
 
