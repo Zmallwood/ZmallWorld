@@ -50,3 +50,5 @@ Project Link: https://github.com/ZmallWood/ZmallWorld
 
 ## Acknowledgements
 * [xmake](https://xmake.io)
+* [Daimonin](https://www.daimonin.org)
+* [The Mana World](https://www.themanaworld.org)
