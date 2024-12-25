@@ -17,5 +17,7 @@
 #include "common/key_codes.hpp"
 #include "common/utilities.hpp"
 #include "common/hash.hpp"
-#include "common/math_lib/sizef.hpp"
+#include "common/matter/size.hpp"
+#include "common/matter/sizef.hpp"
 #include "common/time.hpp"
+#include "common/canvas_utilities.hpp"

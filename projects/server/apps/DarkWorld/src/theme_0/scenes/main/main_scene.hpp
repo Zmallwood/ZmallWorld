@@ -7,13 +7,15 @@
 namespace dw {
     class world_view;
     class fps_counter;
+    class session_properties;
 
     class main_scene : public i_scene {
       public:
         main_scene();
 
         void update(std::shared_ptr<engine> engine) override;
-        void render(std::shared_ptr<net_session> net_session) override;
+        void render(std::shared_ptr<net_session> net_session,
+                    std::shared_ptr<session_properties> session_properties) override;
 
       private:
         std::shared_ptr<world_view> world_view_;

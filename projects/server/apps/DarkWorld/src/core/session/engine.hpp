@@ -6,15 +6,16 @@ namespace dw {
     class scene_manager;
     class net_session;
     class keyboard_input;
+    class session_properties;
 
     class engine : public std::enable_shared_from_this<engine> {
       public:
         engine();
         void update();
-        void render(std::shared_ptr<net_session> net_session);
+        void render(std::shared_ptr<net_session> net_session, std::shared_ptr<session_properties> session_properties);
 
         auto get_scene_manager() {
-          return scene_manager_;
+            return scene_manager_;
         }
 
         auto get_keyboard_input() {

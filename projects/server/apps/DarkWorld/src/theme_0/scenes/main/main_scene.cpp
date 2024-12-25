@@ -2,6 +2,7 @@
 
 #include "main_scene.hpp"
 #include "core/net/net_session.hpp"
+#include "core/session/session_properties.hpp"
 #include "theme_0/modules_lib/fps_counter.hpp"
 #include "theme_0/modules_lib/world_view.hpp"
 
@@ -14,9 +15,10 @@ namespace dw {
         fps_counter_->update();
     }
 
-    void main_scene::render(std::shared_ptr<net_session> net_session) {
+    void main_scene::render(std::shared_ptr<net_session> net_session,
+                            std::shared_ptr<session_properties> session_properties) {
         net_session->add_message("clear;0;150;255");
-        world_view_->render(net_session);
+        world_view_->render(net_session, session_properties);
         fps_counter_->render(net_session);
     }
 }
