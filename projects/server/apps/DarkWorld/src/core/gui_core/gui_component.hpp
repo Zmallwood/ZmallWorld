@@ -7,6 +7,10 @@ namespace dw {
       public:
         void update();
         void render();
+        virtual void update_derived() {
+        }
+        virtual void render_derived() {
+        }
 
       private:
     };

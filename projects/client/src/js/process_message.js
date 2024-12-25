@@ -1,4 +1,4 @@
-new_draw_commands = []
+new_draw_commands = [];
 
 var process_message = function (ws, evt, ctx, draw_commands) {
   var msg = evt.data;
@@ -56,7 +56,17 @@ var process_message = function (ws, evt, ctx, draw_commands) {
       } else {
         new_draw_commands.push("ctx.fillStyle = 'rgb(0,0,0)';");
       }
-      new_draw_commands.push("ctx.fillText('"  + text + "'," + xpx + "," + ypx + ");");
+      var x_offset = 0;
+      if (parts.length >= 8) {
+        var center_align = parts[7];
+        if (center_align == true) {
+          var text_width = ctx.measureText(text).width;
+          x_offset = -text_width / 2;
+        }
+      }
+      new_draw_commands.push(
+        "ctx.fillText('" + text + "'," + (xpx + x_offset) + "," + ypx + ");",
+      );
       break;
     case "present":
       draw_commands.length = 0;
