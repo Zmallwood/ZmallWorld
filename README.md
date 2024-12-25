@@ -34,7 +34,7 @@ This will start up the Zmall World server along with the provided default app Da
 
     make run_dev
 
-# Provided apps
+# Provided default apps
 <div align="center">
   <img src="media/images/dark_world_logo.png" alt="Dark World">
 </div>
