@@ -5,7 +5,9 @@ WebPlatform for running other webapps, developed in JS and C++.
 
 ### Prerequisites
 
-**xmake**
+**Build system - xmake**
+
+Install instructions at [xmake.io][https://xmake.io]
 
 **Execute**
 
