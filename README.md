@@ -19,7 +19,7 @@
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -90,7 +90,7 @@ Andreas Åkerberg - zmallwood@proton.me
 
 Project Link: https://github.com/ZmallWood/ZmallWorld
 
-# Acknowledgments
+# Acknowledgements
 
 - [xmake](https://xmake.io)
 - [Daimonin](https://www.daimonin.org)
