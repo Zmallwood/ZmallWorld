@@ -3,3 +3,4 @@ build/
 ZmallSim/
 .cache/
 *.png~
+compile_commands.json
