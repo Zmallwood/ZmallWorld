@@ -7,15 +7,15 @@
 #include "core/session/scenes_core/scene_manager.hpp"
 
 namespace dw {
-    void login_scene::update(std::shared_ptr<engine> engine) {
+    void login_scene::update_derived(std::shared_ptr<engine> engine) {
         if (engine->get_keyboard_input()->any_key_is_pressed_pick_result()) {
             engine->get_scene_manager()->go_to_scene("main_scene");
         }
     }
 
-    void login_scene::render(std::shared_ptr<net_session> net_session,
+    void login_scene::render_derived(std::shared_ptr<net_session> net_session,
                              std::shared_ptr<session_properties> session_properties) {
-        draw_image(net_session, "default_scene_background", 0.0, 0.0, 1.0, 1.0);
-        draw_image(net_session, "dark_world_logo", 0.45, 0.2, 0.1, 0.05);
+        draw_image(net_session, "default_scene_background", 0.0f, 0.0f, 1.0f, 1.0f);
+        draw_image(net_session, "dark_world_logo", 0.45f, 0.2f, 0.1f, 0.05f);
     }
 }

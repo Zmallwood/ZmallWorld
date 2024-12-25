@@ -11,11 +11,11 @@ namespace dw {
         : world_view_(std::make_shared<world_view>()), fps_counter_(std::make_shared<fps_counter>()) {
     }
 
-    void main_scene::update(std::shared_ptr<engine> engine) {
+    void main_scene::update_derived(std::shared_ptr<engine> engine) {
         fps_counter_->update();
     }
 
-    void main_scene::render(std::shared_ptr<net_session> net_session,
+    void main_scene::render_derived(std::shared_ptr<net_session> net_session,
                             std::shared_ptr<session_properties> session_properties) {
         clear(net_session, 0, 150, 255);
         world_view_->render(net_session, session_properties);

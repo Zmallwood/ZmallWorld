@@ -9,8 +9,8 @@ namespace dw {
 
     class login_scene : public i_scene {
       public:
-        void update(std::shared_ptr<engine> engine) override;
-        void render(std::shared_ptr<net_session> net_session,
+        void update_derived(std::shared_ptr<engine> engine) override;
+        void render_derived(std::shared_ptr<net_session> net_session,
                     std::shared_ptr<session_properties> session_properties) override;
     };
 }
