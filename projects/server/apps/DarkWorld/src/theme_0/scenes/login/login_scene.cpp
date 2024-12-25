@@ -17,7 +17,6 @@ namespace dw {
       net_session->add_message("clear;0;150;255");
       net_session->add_message("draw_image;default_scene_background;0.0;0.0;1.0;1.0");
       net_session->add_message("draw_image;dark_world_logo;0.45;0.2;0.1;0.05");
-      net_session->do_write();
     }
 }
 

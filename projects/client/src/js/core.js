@@ -2,12 +2,15 @@ load_script("process_message.js");
 load_script("image_loading.js");
 
 var connect = function (port) {
-  const canvas = document.getElementById("main_canvas");
+  var current_buffer = 1;
+  const canvas = document.getElementById("canvas_buffer_1");
   const ctx = canvas.getContext("2d");
   ctx.canvas.width = window.innerWidth;
   ctx.canvas.height = window.innerHeight;
 
   ctx.font = "48px serif";
+
+  var draw_commands = [];
 
   var ws = new WebSocket("ws://localhost:" + port);
   ws.onopen = function () {
@@ -16,7 +19,7 @@ var connect = function (port) {
   };
 
   ws.onmessage = function (evt) {
-    process_message(evt, ctx);
+    process_message(evt, ctx, draw_commands);
   };
 
   ws.onclose = function () {
@@ -27,6 +30,18 @@ var connect = function (port) {
     e = e || window.event;
     ws.send("key_press;" + e.keyCode);
   };
+
+  var draw_frame = function () {
+    requestAnimationFrame(draw_frame);
+    ctx.save();
+    for (cmd of draw_commands) {
+      console.log("EVAL " + cmd);
+      eval(cmd);
+    }
+    ctx.restore();
+  };
+
+  draw_frame();
 };
 
 var init = function () {

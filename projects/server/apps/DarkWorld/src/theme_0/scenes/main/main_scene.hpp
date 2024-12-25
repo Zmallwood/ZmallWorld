@@ -6,6 +6,7 @@
 
 namespace dw {
     class world_view;
+    class fps_counter;
 
     class main_scene : public i_scene {
       public:
@@ -16,5 +17,6 @@ namespace dw {
 
       private:
         std::shared_ptr<world_view> world_view_;
+        std::shared_ptr<fps_counter> fps_counter_;
     };
 }

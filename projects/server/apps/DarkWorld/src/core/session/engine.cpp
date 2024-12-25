@@ -3,6 +3,7 @@
 #include "engine.hpp"
 #include "input/keyboard_input.hpp"
 #include "scenes_core/scene_manager.hpp"
+#include "core/net/net_session.hpp"
 
 namespace dw {
     engine::engine()
@@ -15,5 +16,7 @@ namespace dw {
 
     void engine::render(std::shared_ptr<net_session> net_session) {
         scene_manager_->render(net_session);
+        net_session->add_message("present");
+        net_session->do_write();
     }
 }
