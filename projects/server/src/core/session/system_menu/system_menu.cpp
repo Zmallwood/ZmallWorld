@@ -2,7 +2,6 @@
 
 #include "system_menu.hpp"
 #include "core/net/net_session.hpp"
-#include "pch/pch.hpp"
 
 namespace zw {
     void system_menu::render(std::shared_ptr<net_session> net_session) {

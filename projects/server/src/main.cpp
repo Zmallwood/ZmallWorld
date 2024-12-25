@@ -1,6 +1,5 @@
 // Copright 2024 Andreas Åkerberg
 
-#include "pch/pch.hpp"
 #include "core/server.hpp"
 
 int main(int argc, char *argv[]) {
