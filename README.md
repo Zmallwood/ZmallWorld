@@ -34,3 +34,8 @@ This will start up the Zmall World server along with the provided default app Da
 ## Provided apps
 
 ### Dark World
+
+Dark World is an online role playing game using the Zmall World platform.
+
+## License
+Distributed under the MIT License. See LICENSE file for more information.
