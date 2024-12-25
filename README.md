@@ -43,6 +43,11 @@ This will start up the Zmall World server along with the provided default app Da
 
 Dark World is an online role playing game using the Zmall World platform.
 
+# Roadmap
+- [X] Create README
+- [X] Create working prototype for Zmall World
+- [ ] Create working prototype for Dark World
+
 # License
 Distributed under the MIT License. See LICENSE file for more information.
 
