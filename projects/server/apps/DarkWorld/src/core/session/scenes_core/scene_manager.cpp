@@ -18,12 +18,13 @@ namespace dw {
             scenes_.at(current_scene_)->update(engine);
     }
 
-    void scene_manager::render(std::shared_ptr<net_session> net_session) {
+    void scene_manager::render(std::shared_ptr<net_session> net_session,
+                               std::shared_ptr<session_properties> session_properties) {
         if (scenes_.contains(current_scene_))
-            scenes_.at(current_scene_)->render(net_session);
+            scenes_.at(current_scene_)->render(net_session, session_properties);
     }
 
     void scene_manager::go_to_scene(std::string_view scene_name) {
-      current_scene_ = hash(scene_name);
+        current_scene_ = hash(scene_name);
     }
 }

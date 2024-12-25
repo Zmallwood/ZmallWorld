@@ -4,7 +4,6 @@
 #include "boost/beast/core/flat_buffer.hpp"
 #include "boost/beast/core/multi_buffer.hpp"
 #include "core/session/session.hpp"
-#include "pch/pch.hpp"
 
 namespace dw {
     namespace beast = boost::beast;
@@ -36,7 +35,8 @@ namespace dw {
 
         session_ = std::make_shared<session>();
         do_read();
-        threads_.push_back(std::thread([this] {this->session_->process(shared_from_this());}));
+        session_thread_ = std::make_shared<std::thread>([this] {
+            this->session_->process(shared_from_this());});
     }
 
     void net_session::do_read() {
@@ -60,7 +60,7 @@ namespace dw {
         last_message_ = std::string(boost::asio::buffer_cast<const char *>(read_buffer_.data()), read_buffer_.size());
 
         read_buffer_.consume(read_buffer_.size());
-        session_->handle_message(last_message_);
+        session_->handle_message(shared_from_this(), last_message_);
         do_read();
     }
 

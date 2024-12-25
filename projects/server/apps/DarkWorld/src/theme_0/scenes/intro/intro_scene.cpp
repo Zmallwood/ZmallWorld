@@ -3,20 +3,21 @@
 #include "intro_scene.hpp"
 #include "core/net/net_session.hpp"
 #include "core/session/engine.hpp"
-#include "core/session/scenes_core/scene_manager.hpp"
 #include "core/session/input/keyboard_input.hpp"
+#include "core/session/scenes_core/scene_manager.hpp"
 
 namespace dw {
-    void intro_scene::update(std::shared_ptr<engine> engine) {
-      if (engine->get_keyboard_input()->any_key_is_pressed()) {
-        engine->get_scene_manager()->go_to_scene("login_scene");
-      }
+    void intro_scene::update_derived(std::shared_ptr<engine> engine) {
+        if (engine->get_keyboard_input()->any_key_is_pressed_pick_result()) {
+            engine->get_scene_manager()->go_to_scene("login_scene");
+        }
     }
 
-    void intro_scene::render(std::shared_ptr<net_session> net_session) {
-      net_session->add_message("clear;0;150;255");
-      net_session->add_message("draw_image;default_scene_background;0.0;0.0;1.0;1.0");
-      net_session->add_message("draw_image;dark_world_logo;0.4;0.2;0.2;0.1");
-      net_session->add_message("draw_text;Press to start;400;300;255;150;0");
+    void intro_scene::render_derived(std::shared_ptr<net_session> net_session,
+                                     std::shared_ptr<session_properties> session_properties) {
+        draw_image(net_session, "default_scene_background", 0.0f, 0.0f, 1.0f, 1.0f);
+        draw_image(net_session, "dark_world_logo", 0.4f, 0.2f, 0.2f, 0.1f);
+        if (get_ticks() % 800 < 400)
+            draw_text(net_session, "Press to start", 0.5f, 0.5f, 255, 150, 0);
     }
 }

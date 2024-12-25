@@ -1,6 +1,6 @@
 new_draw_commands = []
 
-var process_message = function (evt, ctx, draw_commands) {
+var process_message = function (ws, evt, ctx, draw_commands) {
   var msg = evt.data;
   var parts = msg.split(";");
   switch (parts[0]) {
@@ -44,6 +44,8 @@ var process_message = function (evt, ctx, draw_commands) {
       var text = parts[1];
       var x = parts[2];
       var y = parts[3];
+      var xpx = x * ctx.canvas.width;
+      var ypx = y * ctx.canvas.height;
       if (parts.length >= 7) {
         var r = parts[4];
         var g = parts[5];
@@ -54,16 +56,17 @@ var process_message = function (evt, ctx, draw_commands) {
       } else {
         new_draw_commands.push("ctx.fillStyle = 'rgb(0,0,0)';");
       }
-      new_draw_commands.push("ctx.fillText('"  + text + "'," + x + "," + y + ");");
+      new_draw_commands.push("ctx.fillText('"  + text + "'," + xpx + "," + ypx + ");");
       break;
     case "present":
       draw_commands.length = 0;
       for (entry of new_draw_commands) {
         draw_commands.push(entry);
       }
-      new_draw_commands = [];
+      new_draw_commands.length = 0;
       break;
     case "redirect":
+      ws.close();
       var port = parts[1];
       connect(port);
       break;

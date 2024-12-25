@@ -19,7 +19,7 @@ var connect = function (port) {
   };
 
   ws.onmessage = function (evt) {
-    process_message(evt, ctx, draw_commands);
+    process_message(ws, evt, ctx, draw_commands);
   };
 
   ws.onclose = function () {
@@ -31,6 +31,11 @@ var connect = function (port) {
     ws.send("key_press;" + e.keyCode);
   };
 
+  document.onkeyup = function (e) {
+    e = e || window.event;
+    ws.send("key_release;" + e.keyCode);
+  }
+
   var draw_frame = function () {
     requestAnimationFrame(draw_frame);
     ctx.save();
@@ -39,6 +44,7 @@ var connect = function (port) {
       eval(cmd);
     }
     ctx.restore();
+    ws.send("frame_finished");
   };
 
   draw_frame();
