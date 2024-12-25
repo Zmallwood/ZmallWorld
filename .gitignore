@@ -2,3 +2,4 @@ build/
 .xmake/
 ZmallSim/
 .cache/
+*.png~
