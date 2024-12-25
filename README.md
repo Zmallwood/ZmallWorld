@@ -7,6 +7,9 @@ WebPlatform for running other webapps, developed in JS and C++.
 
 **xmake**
 
+**Execute**
+    make
+
 ## Provided apps
 
 ### Dark World
