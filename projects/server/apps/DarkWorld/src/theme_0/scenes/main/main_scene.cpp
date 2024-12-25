@@ -18,6 +18,5 @@ namespace dw {
         net_session->add_message("clear;0;150;255");
         world_view_->render(net_session);
         fps_counter_->render(net_session);
-        net_session->do_write();
     }
 }

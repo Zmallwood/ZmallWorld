@@ -30,6 +30,7 @@ namespace zw {
 
     void session_loop::render() {
         system_menu_->render(net_session_);
+        net_session_->add_message("present");
         net_session_->do_write();
         net_session_->do_read();
     }

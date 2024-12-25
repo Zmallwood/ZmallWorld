@@ -6,7 +6,6 @@
 namespace dw {
     void fps_counter::update() {
         auto now = get_ticks();
-        std::cout << "NOW: " << now << std::endl;
         if (now > ticks_last_update_ + 1000) {
             fps_ = frames_count_;
             frames_count_ = 0;
