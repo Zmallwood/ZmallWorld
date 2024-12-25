@@ -7,7 +7,7 @@ Zmall World is a web platform for running other web apps, developed in javascrip
 The client uses web sockets for communication and receives and processes general draw instructions which renders unto a double buffered HTML5 canvas.
 
 ## Build with
-* [![Boost][Boost]][Boost-url]
+* [Boost](https://www.boost.org)
 
 # Getting started
 
