@@ -1,6 +1,12 @@
 # Zmall World
 Web platform for running other web apps, developed in javascript and C++.
 
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <img src="media/images/zmall_world_logo.png" alt="Logo" width="80" height="80">
+</div>
+
 ## Getting started
 
 Clone the repo
