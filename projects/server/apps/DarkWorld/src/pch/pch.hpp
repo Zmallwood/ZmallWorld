@@ -20,6 +20,7 @@
 #include "common/matter/size.hpp"
 #include "common/matter/sizef.hpp"
 #include "common/matter/point.hpp"
+#include "common/matter/pointf.hpp"
 #include "common/time.hpp"
 #include "common/canvas_utilities.hpp"
 #include "common/graphics/draw.hpp"

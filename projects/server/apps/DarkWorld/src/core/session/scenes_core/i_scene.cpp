@@ -15,6 +15,6 @@ namespace dw {
     void i_scene::render(std::shared_ptr<net_session> net_session,
                          std::shared_ptr<session_properties> session_properties) {
         render_derived(net_session, session_properties);
-        gui_->render();
+        gui_->render(net_session);
     }
 }
