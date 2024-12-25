@@ -1,10 +1,7 @@
-# Zmall World
-Web platform for running other web apps, developed in javascript and C++.
-
-<!-- PROJECT LOGO -->
 <div align="center">
-  <img src="media/images/zmall_world_logo.png" alt="Logo">
+  <img src="media/images/zmall_world_logo.png" alt="Zmall World">
 </div>
+Web platform for running other web apps, developed in javascript and C++.
 
 ## Getting started
 
