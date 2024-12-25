@@ -16,6 +16,6 @@ namespace dw {
 
     void fps_counter::render(std::shared_ptr<net_session> net_session) {
       std::string fps_text = "FPS: " + std::to_string(fps_);
-      net_session->add_message("draw_text;" + fps_text + ";400;300;255;150;0");
+      net_session->add_message("draw_text;" + fps_text + ";0.9;0.05;255;150;0");
     }
 }

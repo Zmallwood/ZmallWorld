@@ -17,6 +17,10 @@ namespace dw {
                 auto th = tile_size.h;
                 net_session->add_message("draw_image;ground_grass;" + std::to_string(tx) + ";" + std::to_string(ty) +
                                          ";" + std::to_string(tw) + ";" + std::to_string(th));
+                if (x == 5 && y == 5) {
+                net_session->add_message("draw_image;player;" + std::to_string(tx) + ";" + std::to_string(ty) +
+                                         ";" + std::to_string(tw) + ";" + std::to_string(th));
+                }
             }
         }
     }

@@ -8,13 +8,13 @@ namespace zw {
     void system_menu::render(std::shared_ptr<net_session> net_session) {
 
         net_session->add_message("clear;0;150;255");
-        net_session->add_message("draw_text;ZmallWorld menu;10;60");
-        net_session->add_message("draw_text;================;10;120");
+        net_session->add_message("draw_text;ZmallWorld menu;0.05;0.1");
+        net_session->add_message("draw_text;================;0.05;0.15");
         for (auto i = 0; i < menu_options_.size(); i++) {
             std::string text = menu_options_[i];
             if (i == selected_menu_option_)
                 text += " <";
-            std::string message = "draw_text;" + text + ";10;" + std::to_string(120 + (i + 1) * 60);
+            std::string message = "draw_text;" + text + ";0.05;" + std::to_string(0.15 + (i + 1) * 0.05);
 
             net_session->add_message(message);
         }

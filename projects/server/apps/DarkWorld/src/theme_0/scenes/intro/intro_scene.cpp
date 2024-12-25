@@ -18,6 +18,7 @@ namespace dw {
         net_session->add_message("clear;0;150;255");
         net_session->add_message("draw_image;default_scene_background;0.0;0.0;1.0;1.0");
         net_session->add_message("draw_image;dark_world_logo;0.4;0.2;0.2;0.1");
-        net_session->add_message("draw_text;Press to start;400;300;255;150;0");
+        if (get_ticks() % 800 < 400)
+            net_session->add_message("draw_text;Press to start;0.5;0.5;255;150;0");
     }
 }
