@@ -28,5 +28,6 @@ namespace dw {
         std::queue<std::string> outgoing_messages_;
         bool is_writing_ {false};
         std::string last_message_;
+        std::vector<std::thread> threads_;
     };
 }

@@ -21,8 +21,18 @@
 },
 {
   "directory": "/home/andreas/code/hobby/ZmallWorld/repo/projects/server/apps/DarkWorld",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-I", "/home/andreas/.xmake/packages/n/nlohmann_json/v3.11.3/b4e38c4916bd42c39063f144e29030df/include", "-I", "/home/andreas/.xmake/packages/b/boost/1.86.0/4a6030b84a3047e1bd19ef7b130b2be4/include", "-std=c++20", "-I", "src/", "-o", "build/.objs/DarkWorld/linux/x86_64/release/src/theme_0/scenes/main/modules/world_view.cpp.o", "src/theme_0/scenes/main/modules/world_view.cpp"],
-  "file": "src/theme_0/scenes/main/modules/world_view.cpp"
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-I", "/home/andreas/.xmake/packages/n/nlohmann_json/v3.11.3/b4e38c4916bd42c39063f144e29030df/include", "-I", "/home/andreas/.xmake/packages/b/boost/1.86.0/4a6030b84a3047e1bd19ef7b130b2be4/include", "-std=c++20", "-I", "src/", "-o", "build/.objs/DarkWorld/linux/x86_64/release/src/theme_0/modules_lib/world_view.cpp.o", "src/theme_0/modules_lib/world_view.cpp"],
+  "file": "src/theme_0/modules_lib/world_view.cpp"
+},
+{
+  "directory": "/home/andreas/code/hobby/ZmallWorld/repo/projects/server/apps/DarkWorld",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-I", "/home/andreas/.xmake/packages/n/nlohmann_json/v3.11.3/b4e38c4916bd42c39063f144e29030df/include", "-I", "/home/andreas/.xmake/packages/b/boost/1.86.0/4a6030b84a3047e1bd19ef7b130b2be4/include", "-std=c++20", "-I", "src/", "-o", "build/.objs/DarkWorld/linux/x86_64/release/src/theme_0/modules_lib/fps_counter.cpp.o", "src/theme_0/modules_lib/fps_counter.cpp"],
+  "file": "src/theme_0/modules_lib/fps_counter.cpp"
+},
+{
+  "directory": "/home/andreas/code/hobby/ZmallWorld/repo/projects/server/apps/DarkWorld",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-I", "/home/andreas/.xmake/packages/n/nlohmann_json/v3.11.3/b4e38c4916bd42c39063f144e29030df/include", "-I", "/home/andreas/.xmake/packages/b/boost/1.86.0/4a6030b84a3047e1bd19ef7b130b2be4/include", "-std=c++20", "-I", "src/", "-o", "build/.objs/DarkWorld/linux/x86_64/release/src/common/time.cpp.o", "src/common/time.cpp"],
+  "file": "src/common/time.cpp"
 },
 {
   "directory": "/home/andreas/code/hobby/ZmallWorld/repo/projects/server/apps/DarkWorld",

@@ -36,6 +36,7 @@ namespace dw {
 
         session_ = std::make_shared<session>();
         do_read();
+        threads_.push_back(std::thread([this] {this->session_->process(shared_from_this());}));
     }
 
     void net_session::do_read() {
@@ -60,7 +61,6 @@ namespace dw {
 
         read_buffer_.consume(read_buffer_.size());
         session_->handle_message(last_message_);
-        session_->process(shared_from_this());
         do_read();
     }
 
