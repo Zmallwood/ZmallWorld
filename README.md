@@ -27,6 +27,8 @@ Install instructions can be found at [xmake.io](https://xmake.io)
 
 **Run command for development**
 
+This will startup the Zmall World server along with the provided default app Dark World and open the client html file without a web server.
+
     make run_dev
 
 ## Provided apps
