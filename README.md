@@ -112,4 +112,4 @@ Project Link: https://github.com/ZmallWood/ZmallWorld
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
 [issues-url]: https://github.com/ZmallWood/ZmallWorld/issues
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/ZmallWood/ZmallWorld/blob/master/LICENSE.txt
+[license-url]: https://github.com/ZmallWood/ZmallWorld/blob/master/LICENSE
