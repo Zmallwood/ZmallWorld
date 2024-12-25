@@ -4,7 +4,7 @@
 </div>
 Web platform for running other web apps, developed in javascript and C++.
 
-## Getting started
+# Getting started
 
 Clone the repo
 
@@ -14,9 +14,9 @@ Enter project directory
 
     cd ZmallWorld
 
-## Build instructions
+# Build instructions
 
-### Prerequisites
+## Prerequisites
 
 **Build system - xmake**
 
@@ -26,7 +26,7 @@ Install instructions can be found at [xmake.io](https://xmake.io)
 
     make
 
-## Running instructions
+# Running instructions
 
 **Run command for development**
 
@@ -34,22 +34,22 @@ This will start up the Zmall World server along with the provided default app Da
 
     make run_dev
 
-## Provided apps
+# Provided apps
 <div align="center">
   <img src="media/images/dark_world_logo.png" alt="Dark World">
 </div>
 
 Dark World is an online role playing game using the Zmall World platform.
 
-## License
+# License
 Distributed under the MIT License. See LICENSE file for more information.
 
-## Contact
+# Contact
 Andreas Åkerberg - zmallwood@proton.me
 
 Project Link: https://github.com/ZmallWood/ZmallWorld
 
-## Acknowledgements
+# Acknowledgements
 * [xmake](https://xmake.io)
 * [Daimonin](https://www.daimonin.org)
 * [The Mana World](https://www.themanaworld.org)
