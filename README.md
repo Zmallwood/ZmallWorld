@@ -1,4 +1,4 @@
-# ZmallWorld
+# Zmall World
 Web platform for running other web apps, developed in javascript and C++.
 
 ## Getting started
