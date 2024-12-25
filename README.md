@@ -82,6 +82,9 @@ Dark World is an online role playing game using the Zmall World platform. The ga
 * Perma-death
 * Instagib
 * Player-versus-player combat
+* For now, ranged-only combat
+
+Read more about the game in the [wiki](https://github.com/Zmallwood/ZmallWorld/wiki/Dark-World).
 
 # Roadmap
 
