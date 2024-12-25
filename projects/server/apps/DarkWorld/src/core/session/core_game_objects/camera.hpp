@@ -5,5 +5,8 @@
 namespace dw {
     class camera {
       public:
+      
+      private:
+        point position_;
     };
 }

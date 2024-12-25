@@ -31,6 +31,11 @@ var connect = function (port) {
     ws.send("key_press;" + e.keyCode);
   };
 
+  document.onkeyup = function (e) {
+    e = e || window.event;
+    ws.send("key_release;" + e.keyCode);
+  }
+
   var draw_frame = function () {
     requestAnimationFrame(draw_frame);
     ctx.save();

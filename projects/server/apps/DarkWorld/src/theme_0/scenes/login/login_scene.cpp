@@ -8,14 +8,13 @@
 
 namespace dw {
     void login_scene::update(std::shared_ptr<engine> engine) {
-        if (engine->get_keyboard_input()->any_key_is_pressed()) {
+        if (engine->get_keyboard_input()->any_key_is_pressed_pick_result()) {
             engine->get_scene_manager()->go_to_scene("main_scene");
         }
     }
 
     void login_scene::render(std::shared_ptr<net_session> net_session,
                              std::shared_ptr<session_properties> session_properties) {
-        clear(net_session, 0, 150, 255);
         draw_image(net_session, "default_scene_background", 0.0, 0.0, 1.0, 1.0);
         draw_image(net_session, "dark_world_logo", 0.45, 0.2, 0.1, 0.05);
     }

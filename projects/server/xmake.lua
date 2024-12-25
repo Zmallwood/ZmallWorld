@@ -9,5 +9,6 @@ target("ZmallWorldServer")
     add_cxxflags(
       "-std=c++20",
       "-I", "src/",
+      "-include", "src/pch/pch.hpp",
       { force = true }
     )
