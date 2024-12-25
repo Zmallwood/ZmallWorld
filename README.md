@@ -2,7 +2,6 @@
 Web platform for running other web apps, developed in javascript and C++.
 
 <!-- PROJECT LOGO -->
-<br />
 <div align="center">
   <img src="media/images/zmall_world_logo.png" alt="Logo">
 </div>
@@ -40,6 +39,9 @@ This will start up the Zmall World server along with the provided default app Da
 ## Provided apps
 
 ### Dark World
+<div align="center">
+  <img src="media/images/dark_world_logo.png" alt="Logo">
+</div>
 
 Dark World is an online role playing game using the Zmall World platform.
 
