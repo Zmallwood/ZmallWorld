@@ -103,13 +103,13 @@ Project Link: https://github.com/ZmallWood/ZmallWorld
 - [Daimonin](https://www.daimonin.org)
 - [The Mana World](https://www.themanaworld.org)
 
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/ZmallWood/ZmallWorld.svg?style=for-the-badge
 [contributors-url]: https://github.com/ZmallWood/ZmallWorld/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/ZmallWood/ZmallWorld.svg?style=for-the-badge
 [forks-url]: https://github.com/ZmallWood/ZmallWorld/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/ZmallWood/ZmallWorld.svg?style=for-the-badge
 [stars-url]: https://github.com/ZmallWood/ZmallWorld/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/ZmallWood/ZmallWorld.svg?style=for-the-badge
 [issues-url]: https://github.com/ZmallWood/ZmallWorld/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/ZmallWood/ZmallWorld.svg?style=for-the-badge
 [license-url]: https://github.com/ZmallWood/ZmallWorld/blob/master/LICENSE
