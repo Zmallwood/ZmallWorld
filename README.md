@@ -1,7 +1,17 @@
 # ZmallWorld
-WebPlatform for running other webapps, developed in JS and C++.
+Web platform for running other web apps, developed in javascript and C++.
 
 ## Build instructions
+
+### Getting started
+
+Clone the repo
+
+    git clone https://github.com/Zmallwood/ZmallWorld.git
+
+Enter
+
+    cd ZmallWorld
 
 ### Prerequisites
 
