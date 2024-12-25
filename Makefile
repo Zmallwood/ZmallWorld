@@ -21,7 +21,7 @@ clean:
 	rm build; \
 	xmake f --ccache=n;
 
-run:
+run_dev:
 	cd ./projects/server;\
 	screen -S "ZmallWorldServer" -d -m xmake run ZmallWorldServer 0.0.0.0 8080 1;
 	xdg-open ./projects/client/src/index.html; \
