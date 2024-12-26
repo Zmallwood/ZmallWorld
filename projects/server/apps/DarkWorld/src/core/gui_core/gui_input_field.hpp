@@ -13,6 +13,7 @@ namespace dw {
 
       private:
         inline static const std::string k_background_image_name{"dw_input_field_background"};
+        inline static const std::string k_cursor_image_name{"dw_input_field_cursor"};
 
         rectf bounds_;
     };

@@ -68,7 +68,6 @@ var process_message = function (ws, evt, ctx, draw_commands) {
         }
       }
       var y_offset = text_height;
-      console.log("YOFFSET: " + y_offset);
       new_draw_commands.push(
         "ctx.fillText('" +
           text +
