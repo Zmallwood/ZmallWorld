@@ -2,6 +2,8 @@
 
 #include "login_scene.hpp"
 #include "core/gui_core/gui.hpp"
+#include "core/gui_core/gui_input_field.hpp"
+#include "core/gui_core/gui_label.hpp"
 #include "core/gui_core/gui_menu_option.hpp"
 #include "core/net/net_session.hpp"
 #include "core/session/engine.hpp"
@@ -10,8 +12,16 @@
 
 namespace dw {
     login_scene::login_scene() : i_scene() {
+        auto username_label = std::make_shared<gui_label>("Username", 0.3f, 0.4f);
+        auto password_label = std::make_shared<gui_label>("Password", 0.3f, 0.5f);
+        auto username_field = std::make_shared<gui_input_field>(0.4f, 0.4f, 0.2f, 0.05f);
+        auto password_field = std::make_shared<gui_input_field>(0.4f, 0.5f, 0.2f, 0.05f);
         auto login_option = std::make_shared<gui_menu_option>("Login", 0.5f, 0.6f);
         auto create_option = std::make_shared<gui_menu_option>("Create Account", 0.5f, 0.7f);
+        get_gui()->add_child_component(username_label);
+        get_gui()->add_child_component(password_label);
+        get_gui()->add_child_component(username_field);
+        get_gui()->add_child_component(password_field);
         get_gui()->add_child_component(login_option);
         get_gui()->add_child_component(create_option);
     }
@@ -24,7 +34,7 @@ namespace dw {
 
     void login_scene::render_derived(std::shared_ptr<net_session> net_session,
                                      std::shared_ptr<session_properties> session_properties) {
-        draw_image(net_session, "default_scene_background", 0.0f, 0.0f, 1.0f, 1.0f);
-        draw_image(net_session, "dark_world_logo", 0.45f, 0.2f, 0.1f, 0.05f);
+        draw_image(net_session, "dw_default_scene_background", 0.0f, 0.0f, 1.0f, 1.0f);
+        draw_image(net_session, "dw_logo", 0.45f, 0.2f, 0.1f, 0.05f);
     }
 }

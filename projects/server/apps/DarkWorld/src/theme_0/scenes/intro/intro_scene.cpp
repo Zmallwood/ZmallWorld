@@ -15,8 +15,8 @@ namespace dw {
 
     void intro_scene::render_derived(std::shared_ptr<net_session> net_session,
                                      std::shared_ptr<session_properties> session_properties) {
-        draw_image(net_session, "default_scene_background", 0.0f, 0.0f, 1.0f, 1.0f);
-        draw_image(net_session, "dark_world_logo", 0.4f, 0.2f, 0.2f, 0.1f);
+        draw_image(net_session, "dw_default_scene_background", 0.0f, 0.0f, 1.0f, 1.0f);
+        draw_image(net_session, "dw_logo", 0.4f, 0.2f, 0.2f, 0.1f);
         if (get_ticks() % 800 < 400)
             draw_text(net_session, "Press to start", 0.5f, 0.5f, 255, 100, 0, true);
     }

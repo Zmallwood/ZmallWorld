@@ -1,6 +1,8 @@
 var image_names = [
-  "dark_world_logo",
-  "default_scene_background",
-  "ground_grass",
-  "player",
+  "dw_default_scene_background",
+  "dw_ground_grass",
+  "dw_input_field_background",
+  "dw_input_field_cursor",
+  "dw_logo",
+  "dw_player",
 ];

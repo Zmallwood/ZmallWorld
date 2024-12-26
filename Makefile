@@ -29,7 +29,4 @@ run_dev:
 	screen -S "DarkWorld" -d -m xmake run DarkWorld -P .;\
 	screen -RR; \
 	screen -XS ZmallWorldServer quit;
-
-run_zmallsim:
-	cd ./projects/server/apps/ZmallSim;\
-	rye run zmallsim;
+	

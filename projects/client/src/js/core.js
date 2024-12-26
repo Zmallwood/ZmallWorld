@@ -8,7 +8,7 @@ var connect = function (port) {
   ctx.canvas.width = window.innerWidth;
   ctx.canvas.height = window.innerHeight;
 
-  ctx.font = "48px serif";
+  ctx.font = "38px serif";
 
   var draw_commands = [];
 
@@ -40,7 +40,6 @@ var connect = function (port) {
     requestAnimationFrame(draw_frame);
     ctx.save();
     for (cmd of draw_commands) {
-      console.log("EVAL " + cmd);
       eval(cmd);
     }
     ctx.restore();
