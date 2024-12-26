@@ -22,6 +22,7 @@ clean:
 	xmake f --ccache=n;
 
 run_dev:
+	echo "var profile = 'develop';" > projects/client/src/js/config/profile.js; \
 	cd ./projects/server;\
 	screen -S "ZmallWorldServer" -d -m xmake run ZmallWorldServer 0.0.0.0 8080 1;
 	xdg-open ./projects/client/src/index.html; \
@@ -34,5 +35,6 @@ build_prod:
 	cp ./projects/server/build/linux/x86_64/release/ZmallWorldServer ./prod_build/ZmallWorld
 
 run_prod:
+	echo "var profile = 'prod';" > projects/client/src/js/config/profile.js; \
 	cd prod_build; \
 	docker compose up --build;
