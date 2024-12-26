@@ -12,7 +12,7 @@ var connect = function (port) {
 
   var draw_commands = [];
 
-  var ws = new WebSocket("ws://localhost:" + port);
+  var ws = new WebSocket("ws://" + connect_info["HOST"] + ":" + port);
   ws.onopen = function () {
     console.log("socket connection opened properly");
     ws.send("canvas_size;" + ctx.canvas.width + ";" + ctx.canvas.height); // send a message
@@ -49,5 +49,5 @@ var connect = function (port) {
 };
 
 var init = function () {
-  connect(8080);
+  connect(connect_info["PORT"]);
 };
