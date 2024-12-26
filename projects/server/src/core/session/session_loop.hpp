@@ -2,11 +2,13 @@
 
 #pragma once
 
-namespace zw {
-  class net_session;
-  class system_menu;
+namespace zw
+{
+class net_session;
+class system_menu;
 
-  class session_loop {
+class session_loop
+{
   public:
     session_loop(std::shared_ptr<net_session> session);
 
@@ -16,5 +18,5 @@ namespace zw {
   private:
     std::shared_ptr<net_session> net_session_;
     std::shared_ptr<system_menu> system_menu_;
-  };
-}
+};
+} // namespace zw

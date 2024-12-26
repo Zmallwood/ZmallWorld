@@ -3,9 +3,11 @@
 #include "server.hpp"
 #include "net/net_server.hpp"
 
-namespace zw {
-    void server::run(boost::asio::ip::address address, unsigned short port, int threads) {
-        zw::net_server net_server;
-        net_server.run(address, port, threads);
-    }
+namespace zw
+{
+void server::run(boost::asio::ip::address address, unsigned short port, int threads)
+{
+    zw::net_server net_server;
+    net_server.run(address, port, threads);
 }
+} // namespace zw

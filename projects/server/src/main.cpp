@@ -2,9 +2,11 @@
 
 #include "core/server.hpp"
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
     // Check command line arguments.
-    if (argc != 4) {
+    if (argc != 4)
+    {
         std::cerr << "Usage: websocket-server-async <address> <port> <threads>\n"
                   << "Example:\n"
                   << "    websocket-server-async 0.0.0.0 8080 1\n";
