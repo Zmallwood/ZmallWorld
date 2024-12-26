@@ -1,6 +1,8 @@
 load_script("process_message.js");
 load_script("image_loading.js");
 
+var connect_info = get_connect_info();
+
 var connect = function (port) {
   var current_buffer = 1;
   const canvas = document.getElementById("canvas_buffer_1");
