@@ -56,6 +56,9 @@ var process_message = function (ws, evt, ctx, draw_commands) {
       } else {
         new_draw_commands.push("ctx.fillStyle = 'rgb(0,0,0)';");
       }
+      let metrics = ctx.measureText(text);
+      let text_height =
+        metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent;
       var x_offset = 0;
       if (parts.length >= 8) {
         var center_align = parts[7];
@@ -64,8 +67,16 @@ var process_message = function (ws, evt, ctx, draw_commands) {
           x_offset = -text_width / 2;
         }
       }
+      var y_offset = text_height;
+      console.log("YOFFSET: " + y_offset);
       new_draw_commands.push(
-        "ctx.fillText('" + text + "'," + (xpx + x_offset) + "," + ypx + ");",
+        "ctx.fillText('" +
+          text +
+          "'," +
+          (xpx + x_offset) +
+          "," +
+          (ypx + y_offset) +
+          ");",
       );
       break;
     case "present":

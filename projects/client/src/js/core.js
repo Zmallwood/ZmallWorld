@@ -40,7 +40,6 @@ var connect = function (port) {
     requestAnimationFrame(draw_frame);
     ctx.save();
     for (cmd of draw_commands) {
-      console.log("EVAL " + cmd);
       eval(cmd);
     }
     ctx.restore();
