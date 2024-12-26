@@ -20,7 +20,12 @@ namespace dw {
         void on_read(boost::beast::error_code ec, std::size_t bytes_transferred);
         void on_write(boost::beast::error_code ec, std::size_t bytes_transferred);
 
+        auto get_is_open() const {
+            return is_open_;
+        }
+
       private:
+        bool is_open_{true};
         boost::beast::websocket::stream<boost::beast::tcp_stream> ws_;
         boost::beast::flat_buffer read_buffer_;
         boost::beast::flat_buffer write_buffer_;

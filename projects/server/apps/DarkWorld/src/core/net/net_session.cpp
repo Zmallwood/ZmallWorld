@@ -35,8 +35,7 @@ namespace dw {
 
         session_ = std::make_shared<session>();
         do_read();
-        session_thread_ = std::make_shared<std::thread>([this] {
-            this->session_->process(shared_from_this());});
+        session_thread_ = std::make_shared<std::thread>([this] { this->session_->process(shared_from_this()); });
     }
 
     void net_session::do_read() {
@@ -51,8 +50,11 @@ namespace dw {
         boost::ignore_unused(bytes_transferred);
 
         // This indicates that the session was closed
-        if (ec == websocket::error::closed)
+        if (ec == websocket::error::closed) {
+            is_open_ = false;
+            session_thread_->join();
             return;
+        }
 
         if (ec)
             fail(ec, "read");
@@ -69,6 +71,9 @@ namespace dw {
     }
 
     void net_session::do_write() {
+        if (!is_open_)
+            return;
+
         if (!is_writing_ && !outgoing_messages_.empty()) {
             is_writing_ = true;
             boost::beast::flat_buffer b;
@@ -83,8 +88,17 @@ namespace dw {
     void net_session::on_write(beast::error_code ec, std::size_t bytes_transferred) {
         boost::ignore_unused(bytes_transferred);
 
+        if (!is_open_)
+            return;
+
         is_writing_ = false;
         outgoing_messages_.pop();
+
+        if (ec == websocket::error::closed) {
+            is_open_ = false;
+            return;
+        }
+
         if (ec)
             return fail(ec, "write");
 
