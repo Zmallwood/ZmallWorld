@@ -29,4 +29,10 @@ run_dev:
 	screen -S "DarkWorld" -d -m xmake run DarkWorld -P .;\
 	screen -RR; \
 	screen -XS ZmallWorldServer quit;
-	
+
+build_prod:
+	cp ./projects/server/build/linux/x86_64/release/ZmallWorldServer ./prod_build/ZmallWorld
+
+run_prod:
+	cd prod_build; \
+	docker compose up --build;
