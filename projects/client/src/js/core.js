@@ -8,7 +8,7 @@ var connect = function (port) {
   ctx.canvas.width = window.innerWidth;
   ctx.canvas.height = window.innerHeight;
 
-  ctx.font = "48px serif";
+  ctx.font = "38px serif";
 
   var draw_commands = [];
 

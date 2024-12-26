@@ -2,6 +2,7 @@
 
 #include "login_scene.hpp"
 #include "core/gui_core/gui.hpp"
+#include "core/gui_core/gui_label.hpp"
 #include "core/gui_core/gui_menu_option.hpp"
 #include "core/net/net_session.hpp"
 #include "core/session/engine.hpp"
@@ -10,8 +11,12 @@
 
 namespace dw {
     login_scene::login_scene() : i_scene() {
+        auto username_label = std::make_shared<gui_label>("Username", 0.3f, 0.4f);
+        auto password_label = std::make_shared<gui_label>("Password", 0.3f, 0.5f);
         auto login_option = std::make_shared<gui_menu_option>("Login", 0.5f, 0.6f);
         auto create_option = std::make_shared<gui_menu_option>("Create Account", 0.5f, 0.7f);
+        get_gui()->add_child_component(username_label);
+        get_gui()->add_child_component(password_label);
         get_gui()->add_child_component(login_option);
         get_gui()->add_child_component(create_option);
     }
