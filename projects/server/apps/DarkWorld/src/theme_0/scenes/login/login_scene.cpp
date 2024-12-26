@@ -10,31 +10,36 @@
 #include "core/session/input/keyboard_input.hpp"
 #include "core/session/scenes_core/scene_manager.hpp"
 
-namespace dw {
-    login_scene::login_scene() : i_scene() {
-        auto username_label = std::make_shared<gui_label>("Username", 0.3f, 0.4f);
-        auto password_label = std::make_shared<gui_label>("Password", 0.3f, 0.5f);
-        auto username_field = std::make_shared<gui_input_field>(0.4f, 0.4f, 0.2f, 0.05f);
-        auto password_field = std::make_shared<gui_input_field>(0.4f, 0.5f, 0.2f, 0.05f);
-        auto login_option = std::make_shared<gui_menu_option>("Login", 0.5f, 0.6f);
-        auto create_option = std::make_shared<gui_menu_option>("Create Account", 0.5f, 0.7f);
-        get_gui()->add_child_component(username_label);
-        get_gui()->add_child_component(password_label);
-        get_gui()->add_child_component(username_field);
-        get_gui()->add_child_component(password_field);
-        get_gui()->add_child_component(login_option);
-        get_gui()->add_child_component(create_option);
-    }
+namespace dw
+{
+login_scene::login_scene() : i_scene()
+{
+    auto username_label = std::make_shared<gui_label>("Username", 0.3f, 0.4f);
+    auto password_label = std::make_shared<gui_label>("Password", 0.3f, 0.5f);
+    auto username_field = std::make_shared<gui_input_field>(0.4f, 0.4f, 0.2f, 0.05f);
+    auto password_field = std::make_shared<gui_input_field>(0.4f, 0.5f, 0.2f, 0.05f);
+    auto login_option = std::make_shared<gui_menu_option>("Login", 0.5f, 0.6f);
+    auto create_option = std::make_shared<gui_menu_option>("Create Account", 0.5f, 0.7f);
+    get_gui()->add_child_component(username_label);
+    get_gui()->add_child_component(password_label);
+    get_gui()->add_child_component(username_field);
+    get_gui()->add_child_component(password_field);
+    get_gui()->add_child_component(login_option);
+    get_gui()->add_child_component(create_option);
+}
 
-    void login_scene::update_derived(std::shared_ptr<engine> engine) {
-        if (engine->get_keyboard_input()->any_key_is_pressed_pick_result()) {
-            engine->get_scene_manager()->go_to_scene("main_scene");
-        }
-    }
-
-    void login_scene::render_derived(std::shared_ptr<net_session> net_session,
-                                     std::shared_ptr<session_properties> session_properties) {
-        draw_image(net_session, "dw_default_scene_background", 0.0f, 0.0f, 1.0f, 1.0f);
-        draw_image(net_session, "dw_logo", 0.45f, 0.2f, 0.1f, 0.05f);
+void login_scene::update_derived(std::shared_ptr<engine> engine)
+{
+    if (engine->get_keyboard_input()->any_key_is_pressed_pick_result())
+    {
+        engine->get_scene_manager()->go_to_scene("main_scene");
     }
 }
+
+void login_scene::render_derived(std::shared_ptr<net_session> net_session,
+                                 std::shared_ptr<session_properties> session_properties)
+{
+    draw_image(net_session, "dw_default_scene_background", 0.0f, 0.0f, 1.0f, 1.0f);
+    draw_image(net_session, "dw_logo", 0.45f, 0.2f, 0.1f, 0.05f);
+}
+} // namespace dw

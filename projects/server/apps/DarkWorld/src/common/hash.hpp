@@ -2,6 +2,7 @@
 
 #pragma once
 
-namespace dw {
-    int hash(std::string_view text);
+namespace dw
+{
+int hash(std::string_view text);
 }

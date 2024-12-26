@@ -2,4 +2,6 @@
 
 #include "camera.hpp"
 
-namespace dw {}
+namespace dw
+{
+}

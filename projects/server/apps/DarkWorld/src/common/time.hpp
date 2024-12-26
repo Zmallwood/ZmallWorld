@@ -2,6 +2,7 @@
 
 #pragma once
 
-namespace dw {
-  unsigned long long get_ticks();
+namespace dw
+{
+unsigned long long get_ticks();
 }
