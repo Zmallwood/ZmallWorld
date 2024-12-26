@@ -15,9 +15,9 @@ namespace dw {
                                  std::to_string(y) + ";" + std::to_string(w) + ";" + std::to_string(h));
     }
     void draw_text(std::shared_ptr<net_session> net_session, std::string_view text, float x, float y, int r, int g,
-                   int b) {
+                   int b, bool center_align) {
         net_session->add_message(std::string("draw_text;") + text.data() + ";" + std::to_string(x) + ";" +
                                  std::to_string(y) + ";" + std::to_string(r) + ";" + std::to_string(g) + ";" +
-                                 std::to_string(b));
+                                 std::to_string(b) + ";" + std::to_string(center_align));
     }
 }

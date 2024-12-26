@@ -18,6 +18,6 @@ namespace dw {
         draw_image(net_session, "default_scene_background", 0.0f, 0.0f, 1.0f, 1.0f);
         draw_image(net_session, "dark_world_logo", 0.4f, 0.2f, 0.2f, 0.1f);
         if (get_ticks() % 800 < 400)
-            draw_text(net_session, "Press to start", 0.5f, 0.5f, 255, 150, 0);
+            draw_text(net_session, "Press to start", 0.5f, 0.5f, 255, 100, 0, true);
     }
 }

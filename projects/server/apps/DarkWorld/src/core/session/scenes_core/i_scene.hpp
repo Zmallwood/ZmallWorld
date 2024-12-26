@@ -19,6 +19,10 @@ namespace dw {
         virtual void render_derived(std::shared_ptr<net_session> net_session,
                                     std::shared_ptr<session_properties> session_properties) = 0;
 
+      protected:
+        auto get_gui() {
+            return gui_;
+        }
       private:
         std::shared_ptr<gui> gui_;
     };
