@@ -16,6 +16,7 @@ var connect = function (port) {
   ws.onopen = function () {
     console.log("socket connection opened properly");
     ws.send("canvas_size;" + ctx.canvas.width + ";" + ctx.canvas.height); // send a message
+    draw_frame();
   };
 
   ws.onmessage = function (evt) {
@@ -34,7 +35,7 @@ var connect = function (port) {
   document.onkeyup = function (e) {
     e = e || window.event;
     ws.send("key_release;" + e.keyCode);
-  }
+  };
 
   var draw_frame = function () {
     requestAnimationFrame(draw_frame);
@@ -45,8 +46,6 @@ var connect = function (port) {
     ctx.restore();
     ws.send("frame_finished");
   };
-
-  draw_frame();
 };
 
 var init = function () {
