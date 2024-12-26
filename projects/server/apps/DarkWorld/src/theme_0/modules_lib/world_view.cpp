@@ -17,9 +17,9 @@ namespace dw {
                 auto ty = y * tile_size.h;
                 auto tw = tile_size.w;
                 auto th = tile_size.h;
-                draw_image(net_session, "ground_grass", tx, ty, tw, th);
+                draw_image(net_session, "dw_ground_grass", tx, ty, tw, th);
                 if (x == 5 && y == 5) {
-                    draw_image(net_session, "player", tx, ty, tw, th);
+                    draw_image(net_session, "dw_player", tx, ty, tw, th);
                 }
             }
         }
