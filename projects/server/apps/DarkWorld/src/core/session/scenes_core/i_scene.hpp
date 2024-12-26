@@ -23,7 +23,6 @@ namespace dw {
         auto get_gui() {
             return gui_;
         }
-
       private:
         std::shared_ptr<gui> gui_;
     };
